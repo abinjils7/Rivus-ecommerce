@@ -11,13 +11,13 @@
       "id": "7fbc",
       "name": "Abin",
       "email": "abinjils@gmail.com",
-      "password": "8888"
+      "password": "888888"
     },
     {
       "id": "04e6",
       "name": "Athul",
       "email": "athul@gmail.com",
-      "password": "1234"
+      "password": "123456"
     }
   ],
   "cars": [
@@ -312,24 +312,358 @@
   ],
   "orders": [
     {
-      "id": "1",
-      "userId": 1,
-      "carId": 1,
-      "status": "delivered",
-      "orderDate": "2023-10-01"
+      "id": "6e5d",
+      "customer": {
+        "name": "Abin",
+        "email": "abinjils@gmail.com",
+        "address": "kjkdsafjksfjknsfkjsan",
+        "city": "CALICUT",
+        "state": "KERALA",
+        "pincode": "222332",
+        "paymentMethod": "debit-card"
+      },
+      "items": [
+        {
+          "id": "3",
+          "name": "McLaren P1",
+          "brand": "McLaren",
+          "type": "hypersport",
+          "hp": 903,
+          "price": 1800000,
+          "image": "https://images.unsplash.com/photo-1622009869983-f743a058fc60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fE1jTGFyZW4lMjBQMXxlbnwwfHwwfHx8MA%3D%3D",
+          "quantity": 1,
+          "cartItemId": "b5bf"
+        },
+        {
+          "id": "5",
+          "name": "Ferrari LaFerrari",
+          "brand": "Ferrari",
+          "type": "hypersport",
+          "hp": 950,
+          "price": 1440000,
+          "image": "https://images.unsplash.com/photo-1654442595371-891daed0b8ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEZlcnJhcmklMjBMYUZlcnJhcml8ZW58MHx8MHx8fDA%3D",
+          "quantity": 1,
+          "cartItemId": "cd3c"
+        }
+      ],
+      "totalQuantity": 2,
+      "totalPrice": 3240000,
+      "orderDate": "2025-08-21T13:29:25.066Z",
+      "status": "pending",
+      "userId": "7fbc"
+    },
+    {
+      "id": "a893",
+      "customer": {
+        "name": "Abin",
+        "email": "abinjils7@gmail.com",
+        "address": "dsfgdlkmmnnnnnnnnnnnn",
+        "city": "fdsgdfh",
+        "state": "dfsgdh",
+        "pincode": "222332",
+        "paymentMethod": "debit-card"
+      },
+      "items": [
+        {
+          "id": "3",
+          "name": "McLaren P1",
+          "brand": "McLaren",
+          "type": "hypersport",
+          "hp": 903,
+          "price": 1800000,
+          "image": "https://images.unsplash.com/photo-1622009869983-f743a058fc60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fE1jTGFyZW4lMjBQMXxlbnwwfHwwfHx8MA%3D%3D",
+          "quantity": 1,
+          "cartItemId": "9b55"
+        },
+        {
+          "id": "1",
+          "name": "Koenigsegg Agera RS",
+          "brand": "Koenigsegg",
+          "type": "hypersport",
+          "hp": 1160,
+          "price": 2400000,
+          "image": "https://images.unsplash.com/photo-1724091663890-d84c2abfb28b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a29lbmlnc2VnZyUyMGplc2tvfGVufDB8fDB8fHww",
+          "quantity": 1,
+          "cartItemId": "b081"
+        }
+      ],
+      "totalQuantity": 2,
+      "totalPrice": 4200000,
+      "orderDate": "2025-08-21T13:34:54.953Z",
+      "status": "pending",
+      "userId": "7fbc"
+    },
+    {
+      "id": "1bcf",
+      "customer": {
+        "name": "Abin",
+        "email": "abinjils@gmail.com",
+        "address": "wdefghjklu,mjhngbvfcdxsz",
+        "city": "dsfghj",
+        "state": "sdafghfjg",
+        "pincode": "222332",
+        "paymentMethod": "credit-card"
+      },
+      "items": [
+        {
+          "id": "3",
+          "name": "McLaren P1",
+          "brand": "McLaren",
+          "type": "hypersport",
+          "hp": 903,
+          "price": 1800000,
+          "image": "https://images.unsplash.com/photo-1622009869983-f743a058fc60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fE1jTGFyZW4lMjBQMXxlbnwwfHwwfHx8MA%3D%3D",
+          "quantity": 1,
+          "cartItemId": "6a1e"
+        },
+        {
+          "id": "33",
+          "name": "BMW M5 CS",
+          "brand": "BMW",
+          "type": "racespec",
+          "hp": 627,
+          "price": 228000,
+          "image": "https://s3.amazonaws.com/bmwmedia.iconicweb.com/mediasite/libraryImages/P90411290_highRes__mid.jpg",
+          "quantity": 1,
+          "cartItemId": "c096"
+        }
+      ],
+      "totalQuantity": 2,
+      "totalPrice": 2028000,
+      "orderDate": "2025-08-21T13:38:06.524Z",
+      "status": "pending",
+      "userId": "7fbc"
+    },
+    {
+      "id": "11ef",
+      "customer": {
+        "name": "Abin",
+        "email": "abinjils@gmail.com",
+        "address": "ewqrwgetrwqdefregt",
+        "city": "wqewreg",
+        "state": "wefwregtr",
+        "pincode": "243242",
+        "paymentMethod": "debit-card"
+      },
+      "items": [
+        {
+          "id": "3",
+          "name": "McLaren P1",
+          "brand": "McLaren",
+          "type": "hypersport",
+          "hp": 903,
+          "price": 1800000,
+          "image": "https://images.unsplash.com/photo-1622009869983-f743a058fc60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fE1jTGFyZW4lMjBQMXxlbnwwfHwwfHx8MA%3D%3D",
+          "quantity": 1,
+          "cartItemId": "2df1"
+        },
+        {
+          "id": "5",
+          "name": "Ferrari LaFerrari",
+          "brand": "Ferrari",
+          "type": "hypersport",
+          "hp": 950,
+          "price": 1440000,
+          "image": "https://images.unsplash.com/photo-1654442595371-891daed0b8ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEZlcnJhcmklMjBMYUZlcnJhcml8ZW58MHx8MHx8fDA%3D",
+          "quantity": 1,
+          "cartItemId": "6eda"
+        },
+        {
+          "id": "7",
+          "name": "Bugatti Chiron",
+          "brand": "Bugatti",
+          "type": "hypersport",
+          "hp": 1500,
+          "price": 2520000,
+          "image": "https://images.unsplash.com/photo-1566023888476-6f17e362fbb7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8QnVnYXR0aSUyMENoaXJvbnxlbnwwfHwwfHx8MA%3D%3D",
+          "quantity": 1,
+          "cartItemId": "351c"
+        }
+      ],
+      "totalQuantity": 3,
+      "totalPrice": 5760000,
+      "orderDate": "2025-08-21T13:44:16.389Z",
+      "status": "pending",
+      "userId": "7fbc"
+    },
+    {
+      "id": "70c6",
+      "customer": {
+        "name": "Athul",
+        "email": "athul@gmail.com",
+        "address": "qweqrteyrutioy",
+        "city": "ewretyu",
+        "state": "wert",
+        "pincode": "123456",
+        "paymentMethod": "debit-card"
+      },
+      "items": [
+        {
+          "id": "3",
+          "name": "McLaren P1",
+          "brand": "McLaren",
+          "type": "hypersport",
+          "hp": 903,
+          "price": 1800000,
+          "image": "https://images.unsplash.com/photo-1622009869983-f743a058fc60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fE1jTGFyZW4lMjBQMXxlbnwwfHwwfHx8MA%3D%3D",
+          "quantity": 1,
+          "cartItemId": "1817"
+        },
+        {
+          "id": "5",
+          "name": "Ferrari LaFerrari",
+          "brand": "Ferrari",
+          "type": "hypersport",
+          "hp": 950,
+          "price": 1440000,
+          "image": "https://images.unsplash.com/photo-1654442595371-891daed0b8ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEZlcnJhcmklMjBMYUZlcnJhcml8ZW58MHx8MHx8fDA%3D",
+          "quantity": 1,
+          "cartItemId": "e5bf"
+        },
+        {
+          "id": "7",
+          "name": "Bugatti Chiron",
+          "brand": "Bugatti",
+          "type": "hypersport",
+          "hp": 1500,
+          "price": 2520000,
+          "image": "https://images.unsplash.com/photo-1566023888476-6f17e362fbb7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8QnVnYXR0aSUyMENoaXJvbnxlbnwwfHwwfHx8MA%3D%3D",
+          "quantity": 1,
+          "cartItemId": "b39c"
+        }
+      ],
+      "totalQuantity": 3,
+      "totalPrice": 5760000,
+      "orderDate": "2025-08-21T13:58:08.421Z",
+      "status": "pending",
+      "userId": "04e6"
     }
   ],
   "cart": [
     {
-      "id": "167d",
+      "id": "7d63",
       "userId": "7fbc",
-      "productId": "70",
+      "productId": "11",
       "quantity": 1
     },
     {
-      "id": "6510",
+      "id": "5485",
+      "userId": "7fbc",
+      "productId": "16",
+      "quantity": 1
+    },
+    {
+      "id": "06b2",
+      "userId": "7fbc",
+      "productId": "18",
+      "quantity": 1
+    },
+    {
+      "id": "fc58",
+      "userId": "7fbc",
+      "productId": "3",
+      "quantity": 1
+    },
+    {
+      "id": "7af5",
+      "userId": "7fbc",
+      "productId": "5",
+      "quantity": 1
+    },
+    {
+      "id": "67cd",
+      "userId": "7fbc",
+      "productId": "5",
+      "quantity": 1
+    },
+    {
+      "id": "cd4b",
+      "userId": "7fbc",
+      "productId": "3",
+      "quantity": 1
+    },
+    {
+      "id": "ad24",
+      "userId": "7fbc",
+      "productId": "3",
+      "quantity": 1
+    },
+    {
+      "id": "1367",
       "userId": "7fbc",
       "productId": "1",
+      "quantity": 1
+    },
+    {
+      "id": "b5bf",
+      "userId": "7fbc",
+      "productId": "3",
+      "quantity": 1
+    },
+    {
+      "id": "cd3c",
+      "userId": "7fbc",
+      "productId": "5",
+      "quantity": 1
+    },
+    {
+      "id": "9b55",
+      "userId": "7fbc",
+      "productId": "3",
+      "quantity": 1
+    },
+    {
+      "id": "b081",
+      "userId": "7fbc",
+      "productId": "1",
+      "quantity": 1
+    },
+    {
+      "id": "6a1e",
+      "userId": "7fbc",
+      "productId": "3",
+      "quantity": 1
+    },
+    {
+      "id": "c096",
+      "userId": "7fbc",
+      "productId": "33",
+      "quantity": 1
+    },
+    {
+      "id": "2df1",
+      "userId": "7fbc",
+      "productId": "3",
+      "quantity": 1
+    },
+    {
+      "id": "6eda",
+      "userId": "7fbc",
+      "productId": "5",
+      "quantity": 1
+    },
+    {
+      "id": "351c",
+      "userId": "7fbc",
+      "productId": "7",
+      "quantity": 1
+    },
+    {
+      "id": "1817",
+      "userId": "04e6",
+      "productId": "3",
+      "quantity": 1
+    },
+    {
+      "id": "e5bf",
+      "userId": "04e6",
+      "productId": "5",
+      "quantity": 1
+    },
+    {
+      "id": "b39c",
+      "userId": "04e6",
+      "productId": "7",
       "quantity": 1
     }
   ]

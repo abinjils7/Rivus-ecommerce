@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../ContextAPI/Cartcontext";
 import { useContext } from "react";
 
 function Cart() {
   const { cart, updateQuantity, removeFromCart, totalQuantity } =
     useContext(CartContext);
+
+    const navigate = useNavigate();
 
   // Calculate total price
   const totalPrice = cart.reduce(
@@ -16,8 +19,9 @@ function Cart() {
       alert("Your cart is empty. Add some items first!");
       return;
     }
-    alert(`Order placed successfully! Total amount: ₹${totalPrice}`);
-    // Later: clear cart or redirect to payment page here.
+
+    navigate("/orderpage");
+    
   };
 
   return (

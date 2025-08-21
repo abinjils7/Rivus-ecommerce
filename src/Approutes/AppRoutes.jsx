@@ -12,6 +12,8 @@ import NewlyLaunched from "../UserPages/User/NewlyLaunched";
 import TestDrive from "../UserPages/User/TestDrive";
 import About from "../UserPages/User/About";
 import Cart from "../UserPages/User/Cart";
+import Orderpage from "../UserPages/User/Orderpage";
+import MyOrders from "../UserPages/User/MyOrders";
 
 function AppRoutes() {
   return (
@@ -30,6 +32,11 @@ function AppRoutes() {
         <Route path="/testdrive" element={<TestDrive/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/orderpage" element={<Orderpage/>}/>
+        <Route path="/ordhistory" element={<MyOrders/>}/>
+
+        
+
 
 
 

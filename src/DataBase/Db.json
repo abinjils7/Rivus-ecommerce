@@ -1,0 +1,336 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "",
+      "email": "",
+      "password": "",
+      "role": ""
+    },
+    {
+      "id": "7fbc",
+      "name": "Abin",
+      "email": "abinjils@gmail.com",
+      "password": "8888"
+    },
+    {
+      "id": "04e6",
+      "name": "Athul",
+      "email": "athul@gmail.com",
+      "password": "1234"
+    }
+  ],
+  "cars": [
+    {
+      "id": "1",
+      "name": "Koenigsegg Agera RS",
+      "brand": "Koenigsegg",
+      "type": "hypersport",
+      "hp": 1160,
+      "price": 2400000,
+      "image": "https://images.unsplash.com/photo-1724091663890-d84c2abfb28b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a29lbmlnc2VnZyUyMGplc2tvfGVufDB8fDB8fHww"
+    },
+    {
+      "id": "3",
+      "name": "McLaren P1",
+      "brand": "McLaren",
+      "type": "hypersport",
+      "hp": 903,
+      "price": 1800000,
+      "image": "https://images.unsplash.com/photo-1622009869983-f743a058fc60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fE1jTGFyZW4lMjBQMXxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "id": "5",
+      "name": "Ferrari LaFerrari",
+      "brand": "Ferrari",
+      "type": "hypersport",
+      "hp": 950,
+      "price": 1440000,
+      "image": "https://images.unsplash.com/photo-1654442595371-891daed0b8ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEZlcnJhcmklMjBMYUZlcnJhcml8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "id": "7",
+      "name": "Bugatti Chiron",
+      "brand": "Bugatti",
+      "type": "hypersport",
+      "hp": 1500,
+      "price": 2520000,
+      "image": "https://images.unsplash.com/photo-1566023888476-6f17e362fbb7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8QnVnYXR0aSUyMENoaXJvbnxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "id": "9",
+      "name": "Mercedes AMG Project One",
+      "brand": "Mercedes-AMG",
+      "type": "hypersport",
+      "hp": 1000,
+      "price": 2280000,
+      "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "11",
+      "name": "McLaren Speedtail",
+      "brand": "McLaren",
+      "type": "hypersport",
+      "hp": 1035,
+      "price": 1920000,
+      "image": "https://images.unsplash.com/photo-1502877338535-766e1452684a"
+    },
+    {
+      "id": "16",
+      "name": "Mercedes G63 AMG",
+      "brand": "Mercedes-AMG",
+      "type": "allterrain",
+      "hp": 577,
+      "price": 360000,
+      "image": "https://images.unsplash.com/photo-1552962599-a09af85f2555?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "18",
+      "name": "Lamborghini Urus Performante",
+      "brand": "Lamborghini",
+      "type": "allterrain",
+      "hp": 657,
+      "price": 420000,
+      "image": "https://images.unsplash.com/photo-1627140290942-7c8f9f56e870?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TGFtYm9yZ2hpbmklMjBVcnVzfGVufDB8fDB8fHww"
+    },
+    {
+      "id": "20",
+      "name": "Bentley Bentayga Speed",
+      "brand": "Bentley",
+      "type": "allterrain",
+      "hp": 626,
+      "price": 456000,
+      "image": "https://www.bentleymotors.com/content/dam/bm/websites/bmcom/bentleymotors-com/models/26my/bentayga-speed/Media%20Group%201.jpg/_jcr_content/renditions/original.image_file.768.576.file/Media%20Group%201.jpg"
+    },
+    {
+      "id": "22",
+      "name": "Jeep Wrangler Rubicon",
+      "brand": "Jeep",
+      "type": "allterrain",
+      "hp": 285,
+      "price": 96000,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/174975/wrangler-exterior-right-front-three-quarter-33.jpeg?isig=0&q=80"
+    },
+    {
+      "id": "24",
+      "name": "Porsche Macan GTS",
+      "brand": "Porsche",
+      "type": "allterrain",
+      "hp": 434,
+      "price": 192000,
+      "image": "https://images-porsche.imgix.net/-/media/B655872B7C7B44D2A06C3A80BFE42838_C247ECCC28104A91A61311EE42E7DFBF_MA22T3EOX0003-macan-gts-driving?w=600&q=85&crop=faces%2Centropy%2Cedges&auto=format"
+    },
+    {
+      "id": "26",
+      "name": "Ford Raptor R",
+      "brand": "Ford",
+      "type": "allterrain",
+      "hp": 700,
+      "price": 180000,
+      "image": "https://www.ford.com/is/image/content/dam/brand_ford/en_us/brand/trucks/f150/reveal_f-150_raptorR/dm/23_FRD_F15_Raptor_R_58620.tif?croppathe=1_3x2&wid=640"
+    },
+    {
+      "id": "31",
+      "name": "BMW M2 CS",
+      "brand": "BMW",
+      "type": "racespec",
+      "hp": 444,
+      "price": 144000,
+      "image": "https://bmw.scene7.com/is/image/BMW/BMW-MY26-M2CS-g87_cs_dynamics_fb-retouched:16to9?fmt=webp&wid=2560&hei=1440"
+    },
+    {
+      "id": "33",
+      "name": "BMW M5 CS",
+      "brand": "BMW",
+      "type": "racespec",
+      "hp": 627,
+      "price": 228000,
+      "image": "https://s3.amazonaws.com/bmwmedia.iconicweb.com/mediasite/libraryImages/P90411290_highRes__mid.jpg"
+    },
+    {
+      "id": "37",
+      "name": "AMG GT R",
+      "brand": "Mercedes-AMG",
+      "type": "racespec",
+      "hp": 577,
+      "price": 312000,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/20865/amg-gt-exterior-right-front-three-quarter-60800.jpeg?q=80"
+    },
+    {
+      "id": "41",
+      "name": "911 GT3 RS",
+      "brand": "Porsche",
+      "type": "racespec",
+      "hp": 518,
+      "price": 384000,
+      "image": "https://images.unsplash.com/photo-1693149351428-15a4961d698d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cG9yc2NoZSUyMGd0M3JzfGVufDB8fDB8fHww"
+    },
+    {
+      "id": "43",
+      "name": "911 GT2 RS",
+      "brand": "Porsche",
+      "type": "racespec",
+      "hp": 700,
+      "price": 420000,
+      "image": "https://imgd.aeplcdn.com/664x374/cw/specialVersions/5838.jpg?v=20180710063832&q=80"
+    },
+    {
+      "id": "45",
+      "name": "Mitsubishi Lancer Evo VI TME",
+      "brand": "Mitsubishi",
+      "type": "daily",
+      "hp": 280,
+      "price": 60000,
+      "image": "http://tme-registry.com/wp-content/uploads/2021/04/photoNo1-2-3-4-1.jpg"
+    },
+    {
+      "id": "46",
+      "name": "Porsche 911 Carrera",
+      "brand": "Porsche",
+      "type": "luxury",
+      "hp": 379,
+      "price": 204000,
+      "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Porsche/911/11757/1717680690776/front-left-side-47.jpg?tr=w-664"
+    },
+    {
+      "id": "48",
+      "name": "2026 LC 500 Inspiration",
+      "brand": "Lexus",
+      "type": "luxury",
+      "hp": 471,
+      "price": 240000,
+      "image": "https://tmna.aemassets.toyota.com/is/image/toyota/lexus/images/models/lc/2026/large-feature/promo/lexus-lc-promo-desktop-1920x640-LEX-FLN-MY26-0007.jpg?wid=1920&hei=640"
+    },
+    {
+      "id": "50",
+      "name": "Jaguar F-TYPE R",
+      "brand": "Jaguar",
+      "type": "luxury",
+      "hp": 575,
+      "price": 192000,
+      "image": "https://www.topgear.com/sites/default/files/2024/03/JAGUAR%20F%20-TYPE%20KT9.jpg"
+    },
+    {
+      "id": "52",
+      "name": "Aston Martin DB12",
+      "brand": "Aston Martin",
+      "type": "luxury",
+      "hp": 671,
+      "price": 504000,
+      "image": "https://www.astonmartin.com/-/media/models---db12/db12_exterior_tiles_grille_2.png?mw=1080&rev=a49f048be47744c8aebccdab2a6fc806&extension=webp&hash=7C8A3001B93FA701C6404DF4FE8A386F"
+    },
+    {
+      "id": "54",
+      "name": "McLaren GT",
+      "brand": "McLaren",
+      "type": "luxury",
+      "hp": 612,
+      "price": 480000,
+      "image": "https://mclaren.scene7.com/is/image/mclaren/GT%20Front34%20Dynamic5_Defy%20the%20Limits:crop-16x9?wid=1920&hei=1080"
+    },
+    {
+      "id": "56",
+      "name": "Rolls-Royce Wraith Black Badge",
+      "brand": "Rolls-Royce",
+      "type": "luxury",
+      "hp": 624,
+      "price": 600000,
+      "image": "data:image/jpeg;base64,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"
+    },
+    {
+      "id": "61",
+      "name": "BMW i4",
+      "type": "Daily Drives",
+      "price": 8000000,
+      "hp": 335,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW5WzWRjUnh6NRYTTj0grWFdSWX89D0lFIzanyReaBbEDSeWCvX2hwEmKexBeQ2uDrwzI&usqp=CAU"
+    },
+    {
+      "id": "62",
+      "name": "BMW M2",
+      "type": "Daily Drives",
+      "price": 9800000,
+      "hp": 453,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcwtSa48ZsPxMPu67rdB2O2FgCw3Ss7McsGby05jjQjGWx3wkuWZ-s&usqp=CAE&s"
+    },
+    {
+      "id": "63",
+      "name": "Mercedes GLS 450",
+      "type": "Daily Drives",
+      "price": 13000000,
+      "hp": 362,
+      "image": "https://nafta.starconnect-ce.i.mercedes-benz.com/iris/iris.jpg?COSY-EU-100-1713d0VXqaSFqtyO67PobzIr3eWsrrCsdRRzwQZQ9vZbMw3SGtGyjtsd2vGcUfp86XGEuiEJ0l34xOB2NQcbApjkbI5uVmMQC3qE3kzNRJ9m7jA6ohKV5Kh%25vqCr%25yLRzYXYaxPXWrH1eJtn8ws8noiZUidM4FGSMTg90h26PDBSbSeWAtRtsd6J3cUfKLcXGEvaVJ0lgYxOB2PBqbApekRI5usmZQC3UXOkzNGJNm7j0OvhKVB%25t%25vqA89yLR5i2YaxVXSrH1qJ%25n8wRQSoiZeIQM6oY2ulnKkzNU%25Km7jseFhKVzKE%25vq7uqyLRacXYaxHahrH18B%25n8wioyoiCpBxySfD2MpC75U3pZbMFwRPPW3SN9hFNTmj32v2bwbU15zsRG1gdPL4LzC3aB5Nt&fb=1&POV=BE040,PZM&width=768&height=320&BKGND=9&IMGT=P27"
+    },
+    {
+      "id": "64",
+      "name": "BMW 840i Coupe",
+      "type": "Daily Drives",
+      "price": 15000000,
+      "hp": 335,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/41406/bmw-8-series-right-front-three-quarter8.jpeg?q=80"
+    },
+    {
+      "id": "66",
+      "name": "Mercedes E-Class",
+      "type": "Daily Drives",
+      "price": 8000000,
+      "hp": 255,
+      "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Mercedes-Benz/Mercedes-Benz-E-Class-2015-2017/1293/1562734844928/front-left-side-47.jpg?tr=w-664"
+    },
+    {
+      "id": "67",
+      "name": "Porsche Panamera",
+      "type": "Daily Drives",
+      "price": 15000000,
+      "hp": 325,
+      "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Porsche/Panamera/11350/1701081788330/front-left-side-47.jpg?tr=w-664"
+    },
+    {
+      "id": "68",
+      "name": "BMW X5 xDrive40i",
+      "type": "Daily Drives",
+      "price": 10000000,
+      "hp": 335,
+      "image": "https://stimg.cardekho.com/images/car-images/930x620/BMW/X5/10490/1689853560153/225_Black-Sapphire-metallic_0d0d0d.jpg"
+    },
+    {
+      "id": "69",
+      "name": "Audi Q8",
+      "type": "Daily Drives",
+      "price": 12000000,
+      "hp": 340,
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/184519/q8-facelift-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80"
+    },
+    {
+      "id": "70",
+      "name": "Mercedes GLE 350",
+      "type": "Daily Drives",
+      "price": 9000000,
+      "hp": 272,
+      "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Mercedes-Benz/GLE/11927/1724843429681/front-left-side-47.jpg?tr=w-664"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": 1,
+      "carId": 1,
+      "status": "delivered",
+      "orderDate": "2023-10-01"
+    }
+  ],
+  "cart": [
+    {
+      "id": "167d",
+      "userId": "7fbc",
+      "productId": "70",
+      "quantity": 1
+    },
+    {
+      "id": "6510",
+      "userId": "7fbc",
+      "productId": "1",
+      "quantity": 1
+    }
+  ]
+}

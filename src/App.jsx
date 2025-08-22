@@ -14,7 +14,9 @@ function App() {
         <AuthProvider>
           <CarProvider>
             <CartProvider>
-            <AppRoutes />
+              <addtoWishlist>
+                <AppRoutes />
+              </addtoWishlist>
             </CartProvider>
           </CarProvider>
         </AuthProvider>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../Common/Nav";
+import Footer from "../Common/Footer";
 
 const timeSlots = [
   "9:00 AM",
@@ -136,6 +137,7 @@ export default function TestDrive() {
           </div>
         </div>
       </div>
+       <Footer/>
     </>
   );
 }

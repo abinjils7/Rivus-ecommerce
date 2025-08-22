@@ -4,16 +4,17 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import { useAuth } from "../../ContextAPI/Authcontext";
+import { useContext } from "react";
+import { CartContext } from "../../ContextAPI/Cartcontext";
 
 export default function Nav() {
-  const { user, logout } = useAuth(); // include logout
+  const {cart}=useContext(CartContext)
+  const { user, logout } = useAuth();
   console.log(user);
-  
 
   return (
     <header className="bg-white shadow-md fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
-        {/* Left: Navigation links */}
         <nav className="flex space-x-6 text-gray-700 font-medium">
           <a href="/" className="hover:text-indigo-600 transition duration-300">
             Home
@@ -30,12 +31,12 @@ export default function Nav() {
           >
             Cars
           </a>
-          <a
+          {/* <a
             href="/contacts"
             className="hover:text-indigo-600 transition duration-300"
           >
             Contacts
-          </a>
+          </a> */}
           <a
             href="/testdrive"
             className="hover:text-indigo-600 transition duration-300"
@@ -44,7 +45,6 @@ export default function Nav() {
           </a>
         </nav>
 
-        {/* Center: Logo */}
         <div className="flex items-center justify-center">
           <span className="text-2xl font-bold text-gray-900 tracking-wide">
             RIVUS
@@ -52,19 +52,9 @@ export default function Nav() {
           cars!
         </div>
 
-        {/* Right: Search + Wishlist + Cart + Sign In/Logout */}
         <div className="flex items-center space-x-6">
-          {/* Search */}
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search"
-              className="pl-10 pr-4 py-1 rounded-full border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-            />
-            <MagnifyingGlassIcon className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
-          </div>
+          <div className="relative"></div>
 
-          {/* Wishlist */}
           <a
             href="/wishlist"
             className="relative text-gray-700 hover:text-indigo-600 transition duration-300"
@@ -72,15 +62,18 @@ export default function Nav() {
             <HeartIcon className="h-6 w-6" />
           </a>
 
-          {/* Cart */}
           <a
             href="/cart"
             className="relative text-gray-700 hover:text-indigo-600 transition duration-300"
           >
             <ShoppingCartIcon className="h-6 w-6" />
+            {cart.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full px-1">
+                {cart.length}
+              </span>
+            )}
           </a>
 
-          {/* Sign In or Logout */}
           <div className="flex items-center ml-auto">
             {user ? (
               <>

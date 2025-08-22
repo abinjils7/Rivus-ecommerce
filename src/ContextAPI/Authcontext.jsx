@@ -2,12 +2,14 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { UserAPI } from "../Api";
 
+
 const AuthContext = createContext();
+
+//  const { toastSuccess, toastFail } = useContext(ToastProvider);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  // Load user from localStorage when app starts
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
@@ -21,7 +23,7 @@ export const AuthProvider = ({ children }) => {
       const newUser = { name, email, password };
       const res = await axios.post(UserAPI, newUser);
       setUser(res.data);
-      localStorage.setItem("user", JSON.stringify(res.data)); // persist user
+      localStorage.setItem("user", JSON.stringify(res.data)); // stting
       alert("Registered successfully!");
     } catch (err) {
       console.error(err);
@@ -30,9 +32,12 @@ export const AuthProvider = ({ children }) => {
   };
 
   // Login user
+
   const login1 = async (email, password) => {
     try {
-      const res = await axios.get(`${UserAPI}?email=${email}&password=${password}`);
+      const res = await axios.get(
+        `${UserAPI}?email=${email}&password=${password}`
+      );
       if (res.data.length > 0) {
         const loggedInUser = res.data[0];
         setUser(loggedInUser);
@@ -43,6 +48,7 @@ export const AuthProvider = ({ children }) => {
       }
     } catch (err) {
       console.error(err);
+
       alert("Login failed");
     }
   };

@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../Common/Nav";
-import CarCards from "./CarCard";
+import CarCards from "./Luxs";
+import Footer from "../Common/Footer";
 
 export default function HeroSection() {
   return (
@@ -15,7 +16,7 @@ export default function HeroSection() {
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source src="/videos/bmw.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          Your browser does not support the video tag
         </video>
 
         <div className="absolute top-0 left-0 w-full h-full bg-black/40 flex flex-col justify-center items-center text-center px-4">
@@ -26,17 +27,14 @@ export default function HeroSection() {
             Drive beyond expectations — premium performance
           </p>
           <a
-            href="/lexury"
+            href="/colections"
             className="mt-6 inline-flex items-center bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-full transition"
           >
             Explore Latest Collection
           </a>
-
-    
-
-
         </div>
       </section>
+       <Footer/>
       {/* <CarCards /> */}
     </>
   );

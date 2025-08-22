@@ -34,7 +34,7 @@ function Cart() {
             key={item.id}
             className="mb-4 p-4 border border-gray-300 rounded-lg shadow-sm flex gap-4"
           >
-            {/* Product image */}
+           
             {item.image && (
               <img
                 src={item.image}
@@ -43,7 +43,7 @@ function Cart() {
               />
             )}
 
-            {/* Product details */}
+           
             <div className="flex-1">
               <h3 className="text-lg font-semibold">{item.brand}</h3>
               <p className="text-gray-700">Price: ₹{item.price}</p>
@@ -52,7 +52,7 @@ function Cart() {
                 Subtotal: ₹{item.price * item.quantity}
               </p>
 
-              {/* Action buttons */}
+            
               <div className="flex items-center gap-2 mt-3">
                 <button
                   onClick={() => updateQuantity(item.id, +1)}

@@ -11,14 +11,12 @@ function MyOrders() {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        // Fetch orders from your API endpoint
         const response = await fetch(`${orderApi}?userId=${user.id}`);
 
         if (response.ok) {
           const ordersData = await response.json();
           setOrders(ordersData);
         } else {
-          // Fallback to localStorage if API fails
           const ordersData = JSON.parse(
             localStorage.getItem("orderHistory") || "[]"
           );
@@ -29,7 +27,7 @@ function MyOrders() {
         }
       } catch (error) {
         console.error("Failed to load orders:", error);
-        // Fallback to localStorage
+      
         const ordersData = JSON.parse(
           localStorage.getItem("orderHistory") || "[]"
         );
@@ -47,19 +45,18 @@ function MyOrders() {
     }
   }, [user]);
 
-  // Filter orders based on status
   const filteredOrders =
     filterStatus === "all"
       ? orders
       : orders.filter((order) => order.status === filterStatus);
 
-  // Function to format date
+  
   const formatDate = (dateString) => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
 
-  // Function to get status badge class
+ 
   const getStatusClass = (status) => {
     switch (status) {
       case "delivered":
@@ -106,7 +103,6 @@ function MyOrders() {
         </div>
       ) : (
         <>
-          {/* Filter controls */}
           <div className="mb-6 flex flex-wrap gap-3">
             <span className="font-medium">Filter by status:</span>
             <button
@@ -129,14 +125,14 @@ function MyOrders() {
             </button>
           </div>
 
-          {/* Orders list */}
+    
           <div className="space-y-6">
             {filteredOrders.map((order) => (
               <div
                 key={order.id}
                 className="border border-gray-200 rounded-lg overflow-hidden"
               >
-                {/* Order header */}
+                
                 <div className="bg-gray-50 p-4 flex flex-wrap justify-between items-center">
                   <div>
                     <div className="font-medium">Order #{order.id}</div>
@@ -157,7 +153,6 @@ function MyOrders() {
                   </div>
                 </div>
 
-                {/* Order items */}
                 <div className="p-4">
                   {order.items.map((item) => (
                     <div

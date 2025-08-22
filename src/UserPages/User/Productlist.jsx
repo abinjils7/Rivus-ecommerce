@@ -5,8 +5,13 @@ import { CartContext } from "../../ContextAPI/Cartcontext";
 import { HeartIcon as HeartOutline } from "@heroicons/react/24/outline";
 import { HeartIcon as HeartSolid } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
+import Footer from "../Common/Footer";
+import { User } from "lucide-react";
+// import { Wishlistcontext } from "../../ContextAPI/Wishlistcontext";
 
 function Productlist() {
+
+  // const {addtoWishlist}=useContext(Wishlistcontext)
   const navigate = useNavigate();
   const { addToCart, cart } = useContext(CartContext);
   const { searchTerm, setSearchTerm, filteredCars, setFilterHP } =
@@ -64,7 +69,7 @@ function Productlist() {
 
                 {/* Wishlist icon */}
                 <button
-                  onClick={() => toggleWishlist(car.id)}
+                  onClick={() => addtoWishlist(car.id,User.id)}
                   className="absolute top-3 right-3 focus:outline-none"
                 >
                   {wishlist.includes(car.id) ? (
@@ -105,6 +110,7 @@ function Productlist() {
           )}
         </div>
       </div>
+       <Footer/>
     </>
   );
 }

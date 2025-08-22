@@ -394,7 +394,7 @@ function OrderPage() {
             disabled={isProcessing || !formik.isValid}
             className="px-6 py-2 bg-black text-white rounded hover:bg-gray-800 disabled:bg-gray-400 disabled:cursor-not-allowed"
           >
-            {isProcessing ? "Processing..." : `Pay ₹${totalPrice}`}
+            {isProcessing ? "Processing..." : `Pay ₹${totalPrice.toLocaleString()}`}
           </button>
         </div>
       </form>

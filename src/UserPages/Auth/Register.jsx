@@ -1,40 +1,93 @@
-import React, { useState } from "react";
-import { useAuth } from "../../ContextAPI/Authcontext";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../ContextAPI/Authcontext";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 function RegisterPage() {
   const navigate = useNavigate();
   const { register } = useAuth();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    register(name, email, password);
-    navigate("/login");
-  };
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      password: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required("Name is required"),
+      email: Yup.string().email("Invalid email").required("Email is required"),
+      password: Yup.string()
+        .min(6, "Password must be at least 6 characters")
+        .required("Password is required"),
+    }),
+    onSubmit: (values) => {
+      register(values.name, values.email, values.password);
+      navigate("/login");
+    },
+  });
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Register</h2>
-      <input
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Name"
-      />
-      <input
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-      />
-      <input
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-      />
-      <button type="submit">Register</button>
-    </form>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <form
+        onSubmit={formik.handleSubmit}
+        className="bg-white p-10 rounded-2xl shadow-xl w-full max-w-md flex flex-col"
+      >
+        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+          Register
+        </h2>
+
+        {/* Name */}
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          {...formik.getFieldProps("name")}
+          className={`mb-4 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300 ${
+            formik.touched.name && formik.errors.name ? "border-red-500" : "border-gray-300"
+          }`}
+        />
+        {formik.touched.name && formik.errors.name ? (
+          <div className="text-red-500 text-sm mb-2">{formik.errors.name}</div>
+        ) : null}
+
+        {/* Email */}
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          {...formik.getFieldProps("email")}
+          className={`mb-4 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300 ${
+            formik.touched.email && formik.errors.email ? "border-red-500" : "border-gray-300"
+          }`}
+        />
+        {formik.touched.email && formik.errors.email ? (
+          <div className="text-red-500 text-sm mb-2">{formik.errors.email}</div>
+        ) : null}
+
+        {/* Password */}
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          {...formik.getFieldProps("password")}
+          className={`mb-6 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300 ${
+            formik.touched.password && formik.errors.password ? "border-red-500" : "border-gray-300"
+          }`}
+        />
+        {formik.touched.password && formik.errors.password ? (
+          <div className="text-red-500 text-sm mb-2">{formik.errors.password}</div>
+        ) : null}
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="bg-purple-300 hover:bg-purple-400 transition-colors text-white font-semibold py-3 rounded-lg"
+        >
+          Register
+        </button>
+      </form>
+    </div>
   );
 }
 

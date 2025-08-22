@@ -8,8 +8,8 @@ import { cartApi } from "../Api";
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const navigate = useNavigate();
-  const { user } = useAuth(); // Assuming AuthContext provides user info
+  // const navigate = useNavigate();
+  const { user } = useAuth(); 
   const { cars } = useContext(CarContext);
 
   const [cart, setCart] = useState(() => {
@@ -19,14 +19,14 @@ export const CartProvider = ({ children }) => {
 
   const [totalQuantity, setTotalQuantity] = useState(0);
 
-  // Recalculate quantity and persist cart
+
   useEffect(() => {
     const total = cart.reduce((sum, item) => sum + item.quantity, 0);
     setTotalQuantity(total);
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // Add to cart in DB (returns created item with id)
+  
   async function addToCartDB(product) {
     try {
       const newCartItem = {
@@ -37,13 +37,13 @@ export const CartProvider = ({ children }) => {
 
       const response = await axios.post(cartApi, newCartItem);
       console.log("Added to backend cart:", response.data);
-      return response.data; // contains DB-generated id
+      return response.data;
     } catch (error) {
       console.error(error);
     }
   }
 
-  // Delete from DB by cartItemId
+  
   async function deleteFromCartDB(cartItemId) {
     try {
       await axios.delete(`${cartApi}/${cartItemId}`);
@@ -53,11 +53,11 @@ export const CartProvider = ({ children }) => {
     }
   }
 
-  // Add to cart (sync with DB)
+  
   async function addToCart(product) {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
-      if (!user) return "login-required";
+      if (!user) return alert("login-required");
 
       const existing = cart.find((item) => item.id === product.id);
       let updatedCart;
@@ -69,10 +69,10 @@ export const CartProvider = ({ children }) => {
             : item
         );
         setCart(updatedCart);
-        // Optional: PATCH quantity in backend if needed
+       
         return "updated";
       } else {
-        const dbItem = await addToCartDB(product); // returns {id, userId, productId, quantity}
+        const dbItem = await addToCartDB(product);
         updatedCart = [
           ...cart,
           { ...product, quantity: 1, cartItemId: dbItem.id },
@@ -85,7 +85,7 @@ export const CartProvider = ({ children }) => {
     }
   }
 
-  // Remove item completely (sync with DB)
+  
   async function removeFromCart(productId) {
     try {
       const item = cart.find((item) => item.id === productId);
@@ -95,7 +95,7 @@ export const CartProvider = ({ children }) => {
       setCart(updatedCart);
 
       if (item.cartItemId) {
-        await deleteFromCartDB(item.cartItemId); // delete using DB id
+        await deleteFromCartDB(item.cartItemId); 
       }
       return "removed";
     } catch (error) {
@@ -103,7 +103,7 @@ export const CartProvider = ({ children }) => {
     }
   }
 
-  // Change quantity locally (+1 / -1)
+  
   const updateQuantity = (productId, change) => {
     const updatedCart = cart.map((item) =>
       item.id === productId
@@ -111,13 +111,13 @@ export const CartProvider = ({ children }) => {
         : item
     );
     setCart(updatedCart);
-    // Optional: PATCH backend quantity if required
+    
   };
 
-  // Clear entire cart (local only)
+ 
   const clearCart = () => {
     setCart([]);
-    // Optionally delete all items from backend if needed
+  
   };
 
   return (

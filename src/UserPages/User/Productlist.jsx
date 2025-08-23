@@ -7,23 +7,17 @@ import { HeartIcon as HeartSolid } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Common/Footer";
 import { User } from "lucide-react";
-// import { Wishlistcontext } from "../../ContextAPI/Wishlistcontext";
+import { WishlistContext } from "../../ContextAPI/WishlistContext";
+
 
 function Productlist() {
 
-  // const {addtoWishlist}=useContext(Wishlistcontext)
+  const { wishlist, wishlistCount, addToWishlist, removeFromWishlist } =
+    useContext(WishlistContext);
   const navigate = useNavigate();
   const { addToCart, cart } = useContext(CartContext);
   const { searchTerm, setSearchTerm, filteredCars, setFilterHP } =
     useContext(CarContext);
-
-  const [wishlist, setWishlist] = useState([]);
-
-  const toggleWishlist = (id) => {
-    setWishlist((prev) =>
-      prev.includes(id) ? prev.filter((carId) => carId !== id) : [...prev, id]
-    );
-  };
 
   const isInCart = (id) => cart.some((item) => item.id === id);
 
@@ -31,7 +25,6 @@ function Productlist() {
     <>
       <Navbar />
       <div className="mt-[110px] ml-[20px]">
-        {/* Search and HP filter */}
         <div className="mb-5 ml-[150px] flex flex-wrap items-center gap-4">
           <input
             type="text"
@@ -69,13 +62,14 @@ function Productlist() {
 
                 {/* Wishlist icon */}
                 <button
-                  onClick={() => addtoWishlist(car.id,User.id)}
+                  onClick={() => addToWishlist(car)}
                   className="absolute top-3 right-3 focus:outline-none"
                 >
                   {wishlist.includes(car.id) ? (
                     <HeartSolid className="w-6 h-6 text-red-500" />
                   ) : (
                     <HeartOutline className="w-6 h-6 text-gray-500" />
+                    
                   )}
                 </button>
 

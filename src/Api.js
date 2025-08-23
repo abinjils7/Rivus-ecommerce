@@ -6,4 +6,4 @@ export const orderApi = "http://localhost:3000/orders";
 
 export const cartApi = "http://localhost:3000/cart";
 
-export const wishlistApi = "http://localhost:3000/wishlists";
+export const wishlistApi = "http://localhost:3000/wishlist";

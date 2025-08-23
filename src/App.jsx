@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { AuthProvider } from "./ContextAPI/Authcontext";
 import { CarProvider } from "./ContextAPI/Carcontext";
 import { CartProvider } from "./ContextAPI/Cartcontext";
+import ToastContext from "./ContextAPI/ToastContext";
+import {WishlistProvider} from "./ContextAPI/WishlistContext";
 
 function App() {
   return (
@@ -14,13 +16,16 @@ function App() {
         <AuthProvider>
           <CarProvider>
             <CartProvider>
-              <addtoWishlist>
-                <AppRoutes />
-              </addtoWishlist>
+              <ToastContext>
+                <WishlistProvider>
+                  <AppRoutes />
+                </WishlistProvider>
+              </ToastContext>
             </CartProvider>
           </CarProvider>
         </AuthProvider>
       </BrowserRouter>
+   
     </>
   );
 }

@@ -1,11 +1,11 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { UserAPI } from "../Api";
+import { toast } from "sonner";
 
 
 const AuthContext = createContext();
 
-//  const { toastSuccess, toastFail } = useContext(ToastProvider);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -24,10 +24,10 @@ export const AuthProvider = ({ children }) => {
       const res = await axios.post(UserAPI, newUser);
       setUser(res.data);
       localStorage.setItem("user", JSON.stringify(res.data)); // stting
-      alert("Registered successfully!");
+      toast.success("Registered successfully!");
     } catch (err) {
       console.error(err);
-      alert("Registration failed");
+      toast.error("Registration failed");
     }
   };
 
@@ -42,21 +42,21 @@ export const AuthProvider = ({ children }) => {
         const loggedInUser = res.data[0];
         setUser(loggedInUser);
         localStorage.setItem("user", JSON.stringify(loggedInUser)); // persist user
-        alert("Logged in successfully!");
+        toast.success("Logged in successfully!");
       } else {
-        alert("Invalid email or password");
+        toast.info("Invalid email or password");
       }
     } catch (err) {
       console.error(err);
 
-      alert("Login failed");
+      toast.error("Login failed");
     }
   };
 
   const logout = () => {
     setUser(null);
     localStorage.removeItem("user"); // clear from storage
-    alert("Logged out!");
+    toast.info("Logged out!");
   };
 
   return (

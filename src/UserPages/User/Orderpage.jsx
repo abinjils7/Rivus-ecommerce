@@ -332,7 +332,7 @@ function OrderPage() {
           </div>
         </div>
         
-        {/* Payment Method Field */}
+       
         <div>
           <h4 className="text-lg font-medium mb-2">Payment Method *</h4>
           <div className="space-y-2">

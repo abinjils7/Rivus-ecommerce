@@ -13,16 +13,26 @@ import MyOrders from "../UserPages/User/MyOrders";
 import Tracs from "../UserPages/User/Tracs";
 import Luxs from "../UserPages/User/Luxs";
 import LoadingSpinner from "../UserPages/Common/Loadingspinner";
-import Wishlist from "../UserPages/User/Wishlist";
+import WishlistPage from "../UserPages/User/Wishlist";
+import { useAuth } from "../ContextAPI/Authcontext";
+
 const Productlist = React.lazy(() => import("../UserPages/User/Productlist"));
 
 function AppRoutes() {
+  const { user } = useAuth();
+
+
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home1 />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+
+        {!user && (
+          <>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+          </>
+        )}
 
         <Route
           path="/marketplace"
@@ -50,8 +60,7 @@ function AppRoutes() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/orderpage" element={<Orderpage />} />
         <Route path="/ordhistory" element={<MyOrders />} />
-        <Route path="/wishlist" element={<Wishlist/>} />
-
+        <Route path="/wishlist" element={<WishlistPage />} />
       </Routes>
     </div>
   );

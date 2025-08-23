@@ -82,7 +82,7 @@ function Cart() {
 
       <hr className="my-4" />
       <p className="text-lg">Total Items: {totalQuantity}</p>
-      <p className="text-xl font-bold">Total Price: ₹{totalPrice}</p>
+      <p className="text-xl font-bold">Total Price: ₹{totalPrice.toLocaleString()}</p>
 
       <button
         onClick={handlePlaceOrder}

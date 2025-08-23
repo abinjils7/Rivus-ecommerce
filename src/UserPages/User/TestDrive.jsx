@@ -41,9 +41,7 @@ export default function TestDrive() {
       <Nav />
 
       <div className="min-h-screen flex flex-col md:flex-row items-center justify-center px-9 pt-10">
-        {/* Left Section */}
-
-        {/* Left Section */}
+     
 
         <div className="md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left mb-10 md:mb-0">
           <h2 className="text-4xl md:text-5xl font-bold text-purple-700 mb-4">
@@ -55,9 +53,9 @@ export default function TestDrive() {
           </p>
         </div>
 
-        {/* Right Section (Form) */}
+       
         <div className="md:w-1/2 w-full max-w-xl bg-white rounded-2xl shadow-xl p-8">
-          {/* Name Input */}
+     
           <div className="mb-5">
             <label className="block text-gray-700 font-medium mb-1">Name</label>
             <input
@@ -67,7 +65,7 @@ export default function TestDrive() {
             />
           </div>
 
-          {/* Phone Input */}
+       
           <div className="mb-8">
             <label className="block text-gray-700 font-medium mb-1">
               Phone Number
@@ -79,7 +77,7 @@ export default function TestDrive() {
             />
           </div>
 
-          {/* Date Selection */}
+      
           <div className="mb-8">
             <p className="font-semibold mb-3 text-gray-700">Select a Date:</p>
             <div className="grid grid-cols-7 gap-2 text-center text-sm">
@@ -103,7 +101,7 @@ export default function TestDrive() {
             </div>
           </div>
 
-          {/* Time Selection */}
+         
           <div className="mb-8">
             <p className="font-semibold mb-3 text-gray-700">Select a Time:</p>
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-3 text-sm">
@@ -123,7 +121,7 @@ export default function TestDrive() {
             </div>
           </div>
 
-          {/* Action Buttons */}
+         
           <div className="flex justify-between mt-6">
             <button className="px-5 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100 transition">
               Back

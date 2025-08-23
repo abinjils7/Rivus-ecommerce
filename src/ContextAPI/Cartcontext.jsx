@@ -4,12 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "./Authcontext";
 import { CarContext } from "./Carcontext";
 import { cartApi } from "../Api";
+import { toast } from "sonner";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   // const navigate = useNavigate();
-  const { user } = useAuth(); 
+  const { user } = useAuth();
   const { cars } = useContext(CarContext);
 
   const [cart, setCart] = useState(() => {
@@ -19,14 +20,12 @@ export const CartProvider = ({ children }) => {
 
   const [totalQuantity, setTotalQuantity] = useState(0);
 
-
   useEffect(() => {
-    const total = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const total = cart.reduce((sum, item) => sum + item.quantity, 0);//
     setTotalQuantity(total);
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  
   async function addToCartDB(product) {
     try {
       const newCartItem = {
@@ -43,7 +42,6 @@ export const CartProvider = ({ children }) => {
     }
   }
 
-  
   async function deleteFromCartDB(cartItemId) {
     try {
       await axios.delete(`${cartApi}/${cartItemId}`);
@@ -53,14 +51,13 @@ export const CartProvider = ({ children }) => {
     }
   }
 
-  
   async function addToCart(product) {
     try {
       const user = JSON.parse(localStorage.getItem("user"));
-      if (!user) return alert("login-required");
+      if (!user) return toast.error("login-required");
 
       const existing = cart.find((item) => item.id === product.id);
-      let updatedCart;
+      let updatedCart; //just creting a variable
 
       if (existing) {
         updatedCart = cart.map((item) =>
@@ -69,8 +66,9 @@ export const CartProvider = ({ children }) => {
             : item
         );
         setCart(updatedCart);
-       
         return "updated";
+
+
       } else {
         const dbItem = await addToCartDB(product);
         updatedCart = [
@@ -78,24 +76,23 @@ export const CartProvider = ({ children }) => {
           { ...product, quantity: 1, cartItemId: dbItem.id },
         ];
         setCart(updatedCart);
-        return "added";
+        return toast.success("added-to-cart");
       }
     } catch (error) {
       console.error("Error adding to cart:", error);
     }
   }
 
-  
   async function removeFromCart(productId) {
     try {
-      const item = cart.find((item) => item.id === productId);
-      if (!item) return "not-found";
+      // const item = cart.find((item) => item.id === productId);
+      // if (!item) return "not-found";
 
       const updatedCart = cart.filter((cartItem) => cartItem.id !== productId);
       setCart(updatedCart);
 
       if (item.cartItemId) {
-        await deleteFromCartDB(item.cartItemId); 
+        await deleteFromCartDB(item.cartItemId);
       }
       return "removed";
     } catch (error) {
@@ -103,7 +100,6 @@ export const CartProvider = ({ children }) => {
     }
   }
 
-  
   const updateQuantity = (productId, change) => {
     const updatedCart = cart.map((item) =>
       item.id === productId
@@ -111,13 +107,10 @@ export const CartProvider = ({ children }) => {
         : item
     );
     setCart(updatedCart);
-    
   };
 
- 
   const clearCart = () => {
     setCart([]);
-  
   };
 
   return (

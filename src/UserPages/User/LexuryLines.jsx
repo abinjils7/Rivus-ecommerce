@@ -44,7 +44,7 @@ function LuxuryLines() {
               }}
               onClick={() => navigate(section.path)}
             >
-              {/* Background overlay that appears on hover */}
+              
               <div className="absolute inset-0 rounded-xl transition-all duration-300 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-white/90 to-transparent"></div>
               
               <div 

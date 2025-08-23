@@ -6,6 +6,7 @@ import Footer from "../Common/Footer";
 export default function HeroSection() {
   return (
     <>
+    <h2>Navbar</h2>
       <Nav />
       <section className="relative w-full h-screen overflow-hidden">
         <video

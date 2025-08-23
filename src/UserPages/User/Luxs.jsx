@@ -12,7 +12,7 @@ function Luxs() {
     try {
       const response = await fetch(`${carApi}`);
       const data = await response.json();
-      // Filter cars to only include those with type 'luxury'
+     
       const luxuryCars = data.filter(car => car.type === 'luxury');
       setCars(luxuryCars);
     } catch (error) {

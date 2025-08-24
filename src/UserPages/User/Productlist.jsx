@@ -6,12 +6,9 @@ import { HeartIcon as HeartOutline } from "@heroicons/react/24/outline";
 import { HeartIcon as HeartSolid } from "@heroicons/react/24/solid";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Common/Footer";
-import { User } from "lucide-react";
 import { WishlistContext } from "../../ContextAPI/WishlistContext";
 
-
 function Productlist() {
-
   const { wishlist, wishlistCount, addToWishlist, removeFromWishlist } =
     useContext(WishlistContext);
   const navigate = useNavigate();
@@ -65,11 +62,10 @@ function Productlist() {
                   onClick={() => addToWishlist(car)}
                   className="absolute top-3 right-3 focus:outline-none"
                 >
-                  {wishlist.includes(car.id) ? (
+                  {wishlist.some((item) => item.id === car.id) ? (
                     <HeartSolid className="w-6 h-6 text-red-500" />
                   ) : (
                     <HeartOutline className="w-6 h-6 text-gray-500" />
-                    
                   )}
                 </button>
 
@@ -83,7 +79,6 @@ function Productlist() {
                   {isInCart(car.id) ? (
                     <button
                       className="mt-3 px-4 py-1.5 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 border border-gray-700"
-
                       onClick={() => navigate("/cart")}
                     >
                       View in Cart
@@ -104,7 +99,7 @@ function Productlist() {
           )}
         </div>
       </div>
-       <Footer/>
+      <Footer />
     </>
   );
 }

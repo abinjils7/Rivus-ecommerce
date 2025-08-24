@@ -15,6 +15,8 @@ import Luxs from "../UserPages/User/Luxs";
 import LoadingSpinner from "../UserPages/Common/Loadingspinner";
 import WishlistPage from "../UserPages/User/Wishlist";
 import { useAuth } from "../ContextAPI/Authcontext";
+import AdminDashboard from "../Admin/Adminpages/AdminDashboard";
+import AddProducts from "../Admin/Adminpages/AddProducts";
 
 const Productlist = React.lazy(() => import("../UserPages/User/Productlist"));
 
@@ -61,6 +63,17 @@ function AppRoutes() {
         <Route path="/orderpage" element={<Orderpage />} />
         <Route path="/ordhistory" element={<MyOrders />} />
         <Route path="/wishlist" element={<WishlistPage />} />
+
+        --------------admin routes-----------------
+
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/products" element={<AddProducts />} />
+
+        
+
+
+
+
       </Routes>
     </div>
   );

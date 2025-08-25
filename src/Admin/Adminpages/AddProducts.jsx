@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { ProductContext } from '../AdminControllers/ProductControlers';
 
 const AddProduct = () => {
+  const { addCarsDB } = useContext(ProductContext);
+
   const [formData, setFormData] = useState({
+    id: crypto.randomUUID(), // still unique, can replace with your own generator
     name: '',
     brand: '',
     type: '',
@@ -15,12 +19,12 @@ const AddProduct = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value
     }));
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
+      setErrors((prev) => ({ ...prev, [name]: '' }));
     }
   };
 
@@ -36,27 +40,24 @@ const AddProduct = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleClick = (e) => {
+    e.preventDefault(); // prevent form submit behavior
     if (!validateForm()) return;
+
     setIsSubmitting(true);
-    try {
-      const response = await fetch('https://your-api.com/cars', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      if (response.ok) {
-        console.log('Car added successfully!');
-        setFormData({ name: '', brand: '', type: '', hp: '', price: '', image: '' });
-      } else {
-        throw new Error('Failed to add car');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
+    addCarsDB(formData);  // call DB function directly here
+    setIsSubmitting(false);
+
+    // Optional: Reset the form after adding
+    setFormData({
+      id: crypto.randomUUID(),
+      name: '',
+      brand: '',
+      type: '',
+      hp: '',
+      price: '',
+      image: ''
+    });
   };
 
   return (
@@ -69,7 +70,7 @@ const AddProduct = () => {
           </h2>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-3">
+        <form className="space-y-3">
           <div>
             <label className="block text-xs font-medium text-gray-700 mb-1">
               Model Name
@@ -119,10 +120,9 @@ const AddProduct = () => {
               >
                 <option value="">Select Type</option>
                 <option value="racespec">Race Spec</option>
-                <option value="sports">Sports</option>
+                <option value="sports">Daily</option>
                 <option value="luxury">Luxury</option>
-                <option value="suv">SUV</option>
-                <option value="sedan">Sedan</option>
+                <option value="suv">Allterrains</option>
               </select>
               {errors.type && <p className="mt-1 text-xs text-red-600">{errors.type}</p>}
             </div>
@@ -182,18 +182,15 @@ const AddProduct = () => {
           </div>
 
           <button
-            type="submit"
+            type="button"  // important: prevent automatic submit
             disabled={isSubmitting}
+            onClick={handleClick}
             className="w-full bg-black hover:bg-gray-800 text-white py-2 px-4 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:opacity-50"
           >
-            {isSubmitting ? (
-              <span>Adding Car...</span>
-            ) : (
-              <span>
-                <i className="fas fa-plus-circle mr-1"></i>
-                Add Car
-              </span>
-            )}
+            <span>
+              <i className="fas fa-plus-circle mr-1"></i>
+              Add Car
+            </span>
           </button>
         </form>
       </div>

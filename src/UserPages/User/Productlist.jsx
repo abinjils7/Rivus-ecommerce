@@ -74,7 +74,10 @@ function Productlist() {
                   <p className="text-gray-600">Brand: {car.brand}</p>
                   <p className="text-gray-600">Type: {car.type}</p>
                   <p className="font-bold mt-1">HP: {car.hp}</p>
-                  <p className="font-bold mt-1">Price: ₹{car.price}</p>
+
+                  <p className="font-bold mt-1">
+                    Price: ${Number(car.price).toLocaleString("en-IN")}
+                  </p>
 
                   {isInCart(car.id) ? (
                     <button

@@ -14,6 +14,7 @@ export const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState(() => {
     const savedWishlist = localStorage.getItem("wishlist");
     return savedWishlist ? JSON.parse(savedWishlist) : [];
+
   });
 
   const [wishlistCount, setWishlistCount] = useState(0);
@@ -34,21 +35,23 @@ export const WishlistProvider = ({ children }) => {
       const response = await axios.post(wishlistApi, newWishlistItem);
       console.log("Added to backend wishlist:", response.data);
       return response.data;
+
     } catch (error) {
       console.error(error);
       throw error;
     }
   }
 
-  async function removeFromWishlistDB(wishlistItemId) {
-    try {
-      await axios.delete(`${wishlistApi}/${wishlistItemId}`);
-      console.log("Removed from backend wishlist:", wishlistItemId);
-    } catch (error) {
-      console.error(error);
-      throw error;
-    }
+  async function removeFromWishlistDB(productId) {
+  try {
+    const response = await axios.delete(`${wishlistApi}/${productId}`);
+    console.log("Removed from backend wishlist:", response.data);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
   }
+}
 
   async function addToWishlist(product) {
     try {
@@ -75,22 +78,26 @@ export const WishlistProvider = ({ children }) => {
   }
 
   async function removeFromWishlist(productId) {
-    try {
-      const item = wishlist.find((item) => item.id === productId);
-      if (!item) return "not-found";
+  try {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) return toast.error("login-required");
 
-      const updatedWishlist = wishlist.filter((wishlistItem) => wishlistItem.id !== productId);
+    const existing = wishlist.find((item) => item.id === productId);
+
+    if (!existing) {
+      return toast.info("Not in wishlist");
+    } else {
+      await removeFromWishlistDB(existing.wishlistItemId);
+      const updatedWishlist = wishlist.filter((item) => item.id !== productId);
       setWishlist(updatedWishlist);
-
-      if (item.wishlistItemId) {
-        await removeFromWishlistDB(item.wishlistItemId);
-      }
       return toast.success("removed-from-wishlist");
-    } catch (error) {
-      console.error("Error removing from wishlist:", error);
-      toast.error("Failed to remove from wishlist");
     }
+  } catch (error) {
+    console.error("Error removing from wishlist:", error);
+    toast.error("Failed to remove from wishlist");
   }
+}
+
 
   const isInWishlist = (productId) => {
     return wishlist.some((item) => item.id === productId);
@@ -107,6 +114,7 @@ export const WishlistProvider = ({ children }) => {
         wishlistCount,
         addToWishlist,
         removeFromWishlist,
+        removeFromWishlistDB,
         isInWishlist,
         clearWishlist,
       }}

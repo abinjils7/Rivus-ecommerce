@@ -17,6 +17,9 @@ import WishlistPage from "../UserPages/User/Wishlist";
 import { useAuth } from "../ContextAPI/Authcontext";
 import AdminDashboard from "../Admin/Adminpages/AdminDashboard";
 import AddProducts from "../Admin/Adminpages/AddProducts";
+import ManageProduct from "../Admin/Adminpages/ManageProduct";
+import ViewordersHistory from "../Admin/Adminpages/ViewordersHistory";
+import ManageUsers from "../Admin/Adminpages/ManageUsers";
 
 const Productlist = React.lazy(() => import("../UserPages/User/Productlist"));
 
@@ -67,7 +70,10 @@ function AppRoutes() {
         --------------admin routes-----------------
 
         <Route path="/admin" element={<AdminDashboard />} />
-        <Route path="/products" element={<AddProducts />} />
+        <Route path="/Addproducts" element={<AddProducts />} />
+        <Route path="/manageproducts" element={<ManageProduct/>} />
+        <Route path="ViewordersHistory" element={<ViewordersHistory/>}/>
+        <Route path="/Manageusers" element={<ManageUsers/>}/>
 
         
 

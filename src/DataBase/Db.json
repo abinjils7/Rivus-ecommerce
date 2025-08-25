@@ -1,12 +1,6 @@
 {
   "users": [
-    {
-      "id": "1",
-      "name": "",
-      "email": "",
-      "password": "",
-      "role": ""
-    },
+  
     {
       "id": "7fbc",
       "name": "Abin",
@@ -46,33 +40,6 @@
   ],
   "cars": [
     {
-      "id": "1",
-      "name": "Koenigsegg Agera RS",
-      "brand": "Koenigsegg",
-      "type": "hypersport",
-      "hp": 1160,
-      "price": 2400000,
-      "image": "https://images.unsplash.com/photo-1724091663890-d84c2abfb28b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8a29lbmlnc2VnZyUyMGplc2tvfGVufDB8fDB8fHww"
-    },
-    {
-      "id": "3",
-      "name": "McLaren P1",
-      "brand": "McLaren",
-      "type": "hypersport",
-      "hp": 903,
-      "price": 1800000,
-      "image": "https://images.unsplash.com/photo-1622009869983-f743a058fc60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fE1jTGFyZW4lMjBQMXxlbnwwfHwwfHx8MA%3D%3D"
-    },
-    {
-      "id": "5",
-      "name": "Ferrari LaFerrari",
-      "brand": "Ferrari",
-      "type": "hypersport",
-      "hp": 950,
-      "price": 1440000,
-      "image": "https://images.unsplash.com/photo-1654442595371-891daed0b8ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEZlcnJhcmklMjBMYUZlcnJhcml8ZW58MHx8MHx8fDA%3D"
-    },
-    {
       "id": "7",
       "name": "Bugatti Chiron",
       "brand": "Bugatti",
@@ -89,15 +56,6 @@
       "hp": 1000,
       "price": 2280000,
       "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": "11",
-      "name": "McLaren Speedtail",
-      "brand": "McLaren",
-      "type": "hypersport",
-      "hp": 1035,
-      "price": 1920000,
-      "image": "https://images.unsplash.com/photo-1502877338535-766e1452684a"
     },
     {
       "id": "16",
@@ -318,20 +276,21 @@
       "image": "https://stimg.cardekho.com/images/car-images/930x620/BMW/X5/10490/1689853560153/225_Black-Sapphire-metallic_0d0d0d.jpg"
     },
     {
-      "id": "69",
-      "name": "Audi Q8",
-      "type": "Daily Drives",
-      "price": 12000000,
-      "hp": 340,
-      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/184519/q8-facelift-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80"
-    },
-    {
       "id": "70",
       "name": "Mercedes GLE 350",
       "type": "Daily Drives",
       "price": 9000000,
       "hp": 272,
       "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Mercedes-Benz/GLE/11927/1724843429681/front-left-side-47.jpg?tr=w-664"
+    },
+    {
+      "id": "8615aef6-e0d3-49a2-a318-9f415bb197db",
+      "name": "Mustang v8GT",
+      "brand": "Ford",
+      "type": "racespec",
+      "hp": "550",
+      "price": "400000",
+      "image": "https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ],
   "orders": [
@@ -888,6 +847,18 @@
       "userId": "7fbc",
       "productId": "1",
       "quantity": 1
+    },
+    {
+      "id": "e28d",
+      "userId": "7fbc",
+      "productId": "7",
+      "quantity": 1
+    },
+    {
+      "id": "afd3",
+      "userId": "7fbc",
+      "productId": "9",
+      "quantity": 1
     }
   ],
   "wishlist": [
@@ -1017,6 +988,16 @@
       "id": "51b4",
       "userId": "7fbc",
       "productId": "37"
+    },
+    {
+      "id": "8d0d",
+      "userId": "7fbc",
+      "productId": "9"
+    },
+    {
+      "id": "02e9",
+      "userId": "7fbc",
+      "productId": "16"
     }
   ]
 }

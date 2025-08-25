@@ -11,7 +11,7 @@ function WishlistPage() {
       {wishlist.length > 0 ? (
         wishlist.map((item) => (
           <div
-            key={item.productId}
+            key={item.id}
             className="mb-4 p-4 border border-gray-300 rounded-lg shadow-sm flex gap-4"
           >
             <img

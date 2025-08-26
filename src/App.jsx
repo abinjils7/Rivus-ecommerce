@@ -9,6 +9,7 @@ import { CartProvider } from "./ContextAPI/Cartcontext";
 import ToastContext from "./ContextAPI/ToastContext";
 import { WishlistProvider } from "./ContextAPI/WishlistContext";
 import ProductControlers from "./Admin/AdminControllers/ProductControlers";
+import UserControlers from "./Admin/AdminControllers/UserControlers";
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
               <ToastContext>
                 <WishlistProvider>
                   <ProductControlers>
-                    <AppRoutes />
+                    <UserControlers>
+                      <AppRoutes />
+                    </UserControlers>
                   </ProductControlers>
                 </WishlistProvider>
               </ToastContext>

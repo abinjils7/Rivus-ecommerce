@@ -1,41 +1,39 @@
 {
   "users": [
-  
     {
       "id": "7fbc",
       "name": "Abin",
       "email": "abinjils@gmail.com",
-      "password": "888888"
+      "password": "888888",
+      "status": true
     },
     {
       "id": "04e6",
       "name": "Athul",
       "email": "athul@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "status": true
     },
     {
       "id": "3c6f",
       "name": "Abin",
       "email": "abinjills0904@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "status": true
     },
     {
-      "id": "7fbc",
+      "id": "7fb0",
       "name": "joy",
       "email": "joy@gmail.com",
-      "password": "888888"
+      "password": "888888",
+      "status": false
     },
     {
       "id": "a087",
       "name": "lucas",
       "email": "lucas@gmail.com",
-      "password": "123456"
-    },
-    {
-      "id": "40b8",
-      "name": "  ",
-      "email": "jils@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "status": false
     }
   ],
   "cars": [
@@ -601,7 +599,7 @@
       "totalPrice": 5040000,
       "orderDate": "2025-08-22T09:01:25.606Z",
       "status": "pending",
-      "userId": "40b8"
+      "userId": null
     },
     {
       "id": "35c5",
@@ -808,13 +806,13 @@
     },
     {
       "id": "0a41",
-      "userId": "40b8",
+      "userId": null,
       "productId": "3",
       "quantity": 1
     },
     {
       "id": "507e",
-      "userId": "40b8",
+      "userId": null,
       "productId": "5",
       "quantity": 1
     },

@@ -11,14 +11,24 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Validation schema using Yup
+  // Validation schema using Yup (no whitespace, trimmed inputs)
   const validationSchema = Yup.object({
     email: Yup.string()
+      .trim("No leading or trailing spaces")
+      .strict(true)
       .email("Invalid email address")
       .required("Email is required"),
     password: Yup.string()
+      .trim("No leading or trailing spaces")
+      .strict(true)
       .min(6, "Password must be at least 6 characters")
       .required("Password is required"),
+    // If you add name field in future:
+    // name: Yup.string()
+    //   .trim("No leading or trailing spaces")
+    //   .strict(true)
+    //   .matches(/^(?!\s*$).+$/, "Name cannot be empty or spaces only")
+    //   .required("Name is required"),
   });
 
   // Formik setup

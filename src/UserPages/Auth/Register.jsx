@@ -15,9 +15,20 @@ function RegisterPage() {
       password: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().required("Name is required"),
-      email: Yup.string().email("Invalid email").required("Email is required"),
+      name: Yup.string()
+        .trim("No leading or trailing spaces")
+        .strict(true)
+        .matches(/^(?!\s*$).+$/, "Name cannot be empty or spaces only")
+        .required("Name is required"),
+      email: Yup.string()
+        .trim("No leading or trailing spaces")
+        .strict(true)
+        .email("Invalid email")
+        .required("Email is required"),
       password: Yup.string()
+        .trim("No leading or trailing spaces")
+        .strict(true)
+        .matches(/^(?!\s*$).+$/, "Password cannot be empty or spaces only")
         .min(6, "Password must be at least 6 characters")
         .required("Password is required"),
     }),
@@ -82,7 +93,8 @@ function RegisterPage() {
         {/* Submit Button */}
         <button
           type="submit"
-          className="bg-purple-300 hover:bg-purple-400 transition-colors text-white font-semibold py-3 rounded-lg"
+          disabled={!formik.isValid || formik.isSubmitting}
+          className="bg-purple-300 hover:bg-purple-400 transition-colors text-white font-semibold py-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Register
         </button>

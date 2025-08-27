@@ -20,7 +20,7 @@ import AddProducts from "../Admin/Adminpages/AddProducts";
 import ManageProduct from "../Admin/Adminpages/ManageProduct";
 import ViewordersHistory from "../Admin/Adminpages/ViewordersHistory";
 import ManageUsers from "../Admin/Adminpages/ManageUsers";
-import EditCarinfos from "../Admin/Adminpages/EditCarinfos";
+
 
 const Productlist = React.lazy(() => import("../UserPages/User/Productlist"));
 
@@ -75,7 +75,7 @@ function AppRoutes() {
         <Route path="/manageproducts" element={<ManageProduct/>} />
         <Route path="/ViewordersHistory" element={<ViewordersHistory/>}/>
         <Route path="/Manageusers" element={<ManageUsers/>}/>
-        <Route path="/editinfos" element={<EditCarinfos/>}/>
+       
 
         
       </Routes>

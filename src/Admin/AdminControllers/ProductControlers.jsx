@@ -31,9 +31,7 @@ export default function ProductControlers({ children }) {
 
   async function editProductDB(productid, newdata) {
     try {
-      await axios.patch(`${carApi}/${productid}`, {
-        newdata,
-      });
+      await axios.patch(`${carApi}/${productid}`, newdata,);
     } catch (err) {
       console.log(err);
     }

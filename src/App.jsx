@@ -7,9 +7,11 @@ import { AuthProvider } from "./ContextAPI/Authcontext";
 import { CarProvider } from "./ContextAPI/Carcontext";
 import { CartProvider } from "./ContextAPI/Cartcontext";
 import ToastContext from "./ContextAPI/ToastContext";
-import { WishlistProvider } from "./ContextAPI/WishlistContext";
+
 import ProductControlers from "./Admin/AdminControllers/ProductControlers";
 import UserControlers from "./Admin/AdminControllers/UserControlers";
+import { WishlistProvider } from "./ContextAPI/WishlistContext";
+import OrderController from "./Admin/AdminControllers/OrderController";
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
                 <WishlistProvider>
                   <ProductControlers>
                     <UserControlers>
-                      <AppRoutes />
+                      <OrderController>
+                        <AppRoutes />
+                      </OrderController>
                     </UserControlers>
                   </ProductControlers>
                 </WishlistProvider>

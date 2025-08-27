@@ -39,67 +39,91 @@ function RegisterPage() {
   });
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <form
-        onSubmit={formik.handleSubmit}
-        className="bg-white p-10 rounded-2xl shadow-xl w-full max-w-md flex flex-col"
-      >
-        <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
-          Register
-        </h2>
+    <>
+      {/* Brand Heading */}
+      <h1 className="ml-10 mt-6 text-4xl">
+        <b>RIVUS</b>Cars<span className="text-xs">TM</span>
+      </h1>
 
-        {/* Name */}
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          {...formik.getFieldProps("name")}
-          className={`mb-4 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300 ${
-            formik.touched.name && formik.errors.name ? "border-red-500" : "border-gray-300"
-          }`}
-        />
-        {formik.touched.name && formik.errors.name ? (
-          <div className="text-red-500 text-sm mb-2">{formik.errors.name}</div>
-        ) : null}
-
-        {/* Email */}
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          {...formik.getFieldProps("email")}
-          className={`mb-4 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300 ${
-            formik.touched.email && formik.errors.email ? "border-red-500" : "border-gray-300"
-          }`}
-        />
-        {formik.touched.email && formik.errors.email ? (
-          <div className="text-red-500 text-sm mb-2">{formik.errors.email}</div>
-        ) : null}
-
-        {/* Password */}
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          {...formik.getFieldProps("password")}
-          className={`mb-6 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-300 ${
-            formik.touched.password && formik.errors.password ? "border-red-500" : "border-gray-300"
-          }`}
-        />
-        {formik.touched.password && formik.errors.password ? (
-          <div className="text-red-500 text-sm mb-2">{formik.errors.password}</div>
-        ) : null}
-
-        {/* Submit Button */}
-        <button
-          type="submit"
-          disabled={!formik.isValid || formik.isSubmitting}
-          className="bg-purple-300 hover:bg-purple-400 transition-colors text-white font-semibold py-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+      <div className="flex items-center justify-center min-h-screen bg-white px-4">
+        <form
+          onSubmit={formik.handleSubmit}
+          className="bg-white p-10 rounded-2xl shadow-xl w-full max-w-md flex flex-col"
         >
-          Register
-        </button>
-      </form>
-    </div>
+          <h2 className="text-center text-4xl font-bold text-gray-900 mb-2">
+            Create Account
+          </h2>
+          <p className="text-center text-gray-500 mb-8">
+            Fill in your details to register.
+          </p>
+
+          {/* Name */}
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            {...formik.getFieldProps("name")}
+            className={`mb-4 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
+              formik.touched.name && formik.errors.name
+                ? "border-red-500 focus:ring-red-500"
+                : "border-gray-300 focus:ring-black focus:border-black"
+            }`}
+          />
+          {formik.touched.name && formik.errors.name && (
+            <div className="text-red-500 text-sm mb-2">{formik.errors.name}</div>
+          )}
+
+          {/* Email */}
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            {...formik.getFieldProps("email")}
+            className={`mb-4 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
+              formik.touched.email && formik.errors.email
+                ? "border-red-500 focus:ring-red-500"
+                : "border-gray-300 focus:ring-black focus:border-black"
+            }`}
+          />
+          {formik.touched.email && formik.errors.email && (
+            <div className="text-red-500 text-sm mb-2">{formik.errors.email}</div>
+          )}
+
+          {/* Password */}
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            {...formik.getFieldProps("password")}
+            className={`mb-6 px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
+              formik.touched.password && formik.errors.password
+                ? "border-red-500 focus:ring-red-500"
+                : "border-gray-300 focus:ring-black focus:border-black"
+            }`}
+          />
+          {formik.touched.password && formik.errors.password && (
+            <div className="text-red-500 text-sm mb-2">{formik.errors.password}</div>
+          )}
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            disabled={!formik.isValid || formik.isSubmitting}
+            className="bg-black hover:bg-gray-800 transition-colors text-white font-semibold py-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Register
+          </button>
+
+          {/* Already have account link */}
+          <p className="mt-6 text-center text-sm text-gray-500">
+            Already have an account?{" "}
+            <a href="/login" className="font-medium text-black hover:underline">
+              Sign in
+            </a>
+          </p>
+        </form>
+      </div>
+    </>
   );
 }
 

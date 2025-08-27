@@ -8,10 +8,10 @@ function WishlistPage() {
     <div className="p-6 max-w-4xl mx-auto">
       <h2 className="text-2xl font-bold mb-4">Your Wishlist</h2>
 
-      {wishlist.length > 0 ? (
+      {wishlist.length ? (
         wishlist.map((item) => (
           <div
-            key={item.id}
+            key={item.id} // wishlist row id
             className="mb-4 p-4 border border-gray-300 rounded-lg shadow-sm flex gap-4"
           >
             <img
@@ -22,10 +22,9 @@ function WishlistPage() {
 
             <div className="flex-1">
               <h3 className="text-lg font-semibold">{item.name}</h3>
-              <p className="text-gray-700">Brand: {item.brand}</p>
               <p className="text-gray-700">Type: {item.type}</p>
+              <p className="text-gray-700">Price: ₹{item.price}</p>
               <p className="text-gray-700">Horsepower: {item.hp} HP</p>
-              <p className="text-gray-700 font-bold"></p>
 
               <button
                 onClick={() => removeFromWishlist(item.productId)}

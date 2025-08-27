@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Navbar from "../Common/Nav";
 import { CarContext } from "../../ContextAPI/Carcontext";
 import { CartContext } from "../../ContextAPI/Cartcontext";
@@ -9,20 +9,19 @@ import Footer from "../Common/Footer";
 import { WishlistContext } from "../../ContextAPI/WishlistContext";
 
 function Productlist() {
-  const { wishlist, wishlistCount, addToWishlist, removeFromWishlist } =
-    useContext(WishlistContext);
+  const { wishlist, addToWishlist, removeFromWishlist } = useContext(WishlistContext);
   const navigate = useNavigate();
   const { addToCart, cart } = useContext(CartContext);
-  const { searchTerm, setSearchTerm, filteredCars, setFilterHP } =
-    useContext(CarContext);
+  const { searchTerm, setSearchTerm, filteredCars, setFilterHP } = useContext(CarContext);
 
   const isInCart = (id) => cart.some((item) => item.id === id);
 
   return (
     <>
       <Navbar />
-      <div className="mt-[110px] ml-[20px]">
-        <div className="mb-5 ml-[150px] flex flex-wrap items-center gap-4">
+      <div className="mt-[110px] px-4">
+        {/* Search and Filter */}
+        <div className="mb-5 flex flex-wrap justify-center gap-4">
           <input
             type="text"
             placeholder="Search cars..."
@@ -44,7 +43,7 @@ function Productlist() {
         </div>
 
         {/* Cars List */}
-        <div className="flex flex-wrap gap-y-6 gap-x-5 justify-start">
+        <div className="flex flex-wrap justify-center gap-6">
           {filteredCars.length > 0 ? (
             filteredCars.map((car) => (
               <div
@@ -57,12 +56,20 @@ function Productlist() {
                   className="w-full h-48 object-cover rounded-md"
                 />
 
-                {/* Wishlist icon */}
                 <button
-                  onClick={() => addToWishlist(car)}
+                  onClick={() => {
+                    const inWishlist = wishlist.some(
+                      (item) => item.productId === car.id
+                    );
+                    if (inWishlist) {
+                      removeFromWishlist(car.id);
+                    } else {
+                      addToWishlist(car);
+                    }
+                  }}
                   className="absolute top-3 right-3 focus:outline-none"
                 >
-                  {wishlist.some((item) => item.id === car.id) ? (
+                  {wishlist.some((item) => item.productId === car.id) ? (
                     <HeartSolid className="w-6 h-6 text-red-500" />
                   ) : (
                     <HeartOutline className="w-6 h-6 text-gray-500" />
@@ -74,9 +81,8 @@ function Productlist() {
                   <p className="text-gray-600">Brand: {car.brand}</p>
                   <p className="text-gray-600">Type: {car.type}</p>
                   <p className="font-bold mt-1">HP: {car.hp}</p>
-
                   <p className="font-bold mt-1">
-                    Price: ${Number(car.price).toLocaleString("en-IN")}
+                    Price: ₹{Number(car.price).toLocaleString("en-IN")}
                   </p>
 
                   {isInCart(car.id) ? (
@@ -98,7 +104,7 @@ function Productlist() {
               </div>
             ))
           ) : (
-            <p className="text-gray-600 text-lg ml-[150px]">No cars found.</p>
+            <p className="text-gray-600 text-lg text-center w-full">No cars found.</p>
           )}
         </div>
       </div>

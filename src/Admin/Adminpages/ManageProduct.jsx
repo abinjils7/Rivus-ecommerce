@@ -1,6 +1,8 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { CarContext } from "../../ContextAPI/Carcontext";
 import { ProductContext } from "../AdminControllers/ProductControlers";
+import { useNavigate } from "react-router-dom";
+import Nav from "../../UserPages/Common/Nav";
 
 export default function ManageProduct() {
   const { cars } = useContext(CarContext);
@@ -13,7 +15,7 @@ export default function ManageProduct() {
     type: "",
     hp: "",
     price: "",
-    image: ""
+    image: "",
   });
 
   const handleedit = (car) => {
@@ -24,14 +26,14 @@ export default function ManageProduct() {
       type: car.type,
       hp: car.hp,
       price: car.price,
-      image: car.image
+      image: car.image,
     });
     setModalOpen(true);
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
@@ -42,44 +44,51 @@ export default function ManageProduct() {
     setModalOpen(false);
   };
 
+    
+  
+
   if (!cars)
     return <h1 className="text-center text-gray-500">No cars available</h1>;
-
   return (
-    <div className="p-4">
-      <h1 className="text-xl font-bold mb-4">All Stocks</h1>
-      <ul className="space-y-3">
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-6">All Stocks</h1>
+      {/* 3-column grid with larger cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {cars.map((car) => (
-          <li
+          <div
             key={car.id}
-            className="flex items-center justify-between border border-gray-300 rounded-lg p-3 hover:shadow-sm transition"
+            className="border border-gray-300 rounded-xl p-6 flex flex-col justify-between w-full h-64 hover:shadow-xl hover:-translate-y-1 transition-transform"
           >
             <div className="flex items-center">
-              <img src={car.image} alt={car.name} className="w-16 h-12 object-cover rounded mr-3" />
-              <div>
-                <p className="font-semibold">{car.name}</p>
-                <p className="text-sm text-gray-600">
+              <img
+                src={car.image}
+                alt={car.name}
+                className="w-24 h-16 object-cover rounded mr-4"
+              />
+              <div className="flex-1">
+                <p className="font-semibold text-lg truncate">{car.name}</p>
+                <p className="text-sm text-gray-600 truncate">
                   {car.brand} | {car.hp} HP | ₹{car.price}
                 </p>
               </div>
             </div>
-            <div className="space-x-2">
+            <div className="flex justify-end space-x-3 mt-4">
               <button
                 onClick={() => handleedit(car)}
-                className="px-3 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600 transition"
+                className="px-4 py-2 bg-black text-white text-sm rounded hover:bg-gray-800 hover:scale-105 shadow transition"
               >
                 Edit
               </button>
               <button
                 onClick={() => deleteProductDB(car.id)}
-                className="px-3 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600 transition"
+                className="px-4 py-2 bg-red-600 text-white text-sm rounded hover:bg-red-700 hover:scale-105 shadow transition"
               >
                 Delete
               </button>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
 
       {/* Inline Modal */}
       {modalOpen && (
@@ -87,21 +96,69 @@ export default function ManageProduct() {
           <div className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-md">
             <h2 className="text-xl font-semibold mb-4">Edit Car</h2>
             <form onSubmit={handleSubmit} className="space-y-3">
-              <input name="name" value={formData.name} onChange={handleChange} placeholder="Name" className="w-full border p-2 rounded"/>
-              <input name="brand" value={formData.brand} onChange={handleChange} placeholder="Brand" className="w-full border p-2 rounded"/>
-              <input name="type" value={formData.type} onChange={handleChange} placeholder="Type" className="w-full border p-2 rounded"/>
-              <input name="hp" value={formData.hp} onChange={handleChange} placeholder="HP" className="w-full border p-2 rounded"/>
-              <input name="price" value={formData.price} onChange={handleChange} placeholder="Price" className="w-full border p-2 rounded"/>
-              <input name="image" value={formData.image} onChange={handleChange} placeholder="Image URL" className="w-full border p-2 rounded"/>
-              
+              <input
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Name"
+                className="w-full border p-2 rounded"
+              />
+              <input
+                name="brand"
+                value={formData.brand}
+                onChange={handleChange}
+                placeholder="Brand"
+                className="w-full border p-2 rounded"
+              />
+              <input
+                name="type"
+                value={formData.type}
+                onChange={handleChange}
+                placeholder="Type"
+                className="w-full border p-2 rounded"
+              />
+              <input
+                name="hp"
+                value={formData.hp}
+                onChange={handleChange}
+                placeholder="HP"
+                className="w-full border p-2 rounded"
+              />
+              <input
+                name="price"
+                value={formData.price}
+                onChange={handleChange}
+                placeholder="Price"
+                className="w-full border p-2 rounded"
+              />
+              <input
+                name="image"
+                value={formData.image}
+                onChange={handleChange}
+                placeholder="Image URL"
+                className="w-full border p-2 rounded"
+              />
+
               <div className="flex justify-end space-x-2">
-                <button type="button" onClick={() => setModalOpen(false)} className="px-4 py-2 bg-gray-300 rounded">Cancel</button>
-                <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded">Save</button>
+                <button
+                  type="button"
+                  onClick={() => setModalOpen(false)}
+                  className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 transition"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition"
+                >
+                  Save
+                </button>
               </div>
             </form>
           </div>
         </div>
       )}
+       {/* <button onClick={Nav}>add</button> */}
     </div>
   );
 }

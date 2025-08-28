@@ -7,6 +7,7 @@ import {
   TrendingUp,
   BarChart3,
   Target,
+  LogOut,
 } from "lucide-react";
 import { Card, CardContent } from "./Card";
 import { useAuth } from "../../ContextAPI/Authcontext";
@@ -43,9 +44,9 @@ export default function AdminDashboard() {
 
   const sales = totoalrevenue / ordercount;
 
-  useEffect(()=>{
-    axios.get(`${carApi}`).then((res)=>setInventryValue(res.data.price))
-  })
+  useEffect(() => {
+    axios.get(`${carApi}`).then((res) => setInventryValue(res.data.price));
+  });
 
   return (
     <div className="flex min-h-screen bg-white">
@@ -55,13 +56,6 @@ export default function AdminDashboard() {
           <span>ADMIN</span>
         </h1>
         <nav className="space-y-1">
-          <Link
-            to="/admin"
-            className="flex items-center gap-3 p-3 rounded-lg text-gray-500 hover:bg-gray-50 transition group font-medium"
-          >
-            <Home size={20} className="group-hover:text-gray-800" />
-            <span className="group-hover:text-gray-800">Dashboard</span>
-          </Link>
           <Link
             to="/manageproducts"
             className="flex items-center gap-3 p-3 rounded-lg text-gray-500 hover:bg-gray-50 transition group font-medium"
@@ -87,9 +81,9 @@ export default function AdminDashboard() {
         <div className="mt-auto pt-6 border-t border-gray-100">
           <button
             onClick={logout}
-            className="w-full py-3 px-4 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1"
+            className="absolute top-4 right-4 p-2 bg-red-600 text-white rounded-full shadow-md hover:bg-red-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-1"
           >
-            Logout
+            <LogOut className="w-5 h-5" />
           </button>
         </div>
       </aside>

@@ -2,9 +2,11 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { orderApi } from "../../Api";
 import { OrderContext } from "../../Admin/AdminControllers/OrderController";
+import { toast } from "sonner";
 
 export default function ViewOrdersHistory() {
   const [orders, setOrders] = useState([]);
+  const [statusChanges, setStatusChanges] = useState({}); // store selected status per order
   const { setOrderStatus } = useContext(OrderContext);
 
   async function fetchOrders() {
@@ -20,15 +22,17 @@ export default function ViewOrdersHistory() {
     fetchOrders();
   }, []);
 
-  // Update local state when status changes
-  const handleStatusChange = async (orderId, newStatus) => {
+  function handleDropdownChange(orderId, value) {
+    setStatusChanges((prev) => ({ ...prev, [orderId]: value }));
+  }
+
+  async function handleUpdateClick(orderId) {
+    const newStatus = statusChanges[orderId];
+    if (!newStatus) return; // nothing selected
     await setOrderStatus(orderId, newStatus);
-    setOrders((prevOrders) =>
-      prevOrders.map((order) =>
-        order.id === orderId ? { ...order, deliveryStatus: newStatus } : order
-      )
-    );
-  };
+    toast.info("updated");
+    fetchOrders();
+  }
 
   return (
     <div className="max-w-7xl mx-auto mt-10 p-4">
@@ -55,7 +59,6 @@ export default function ViewOrdersHistory() {
                 </span>
               </div>
 
-              {/* Customer & Price */}
               <div className="mb-4">
                 <p className="text-gray-700 text-base mb-2">
                   <strong>Customer:</strong> {order.customer.name}
@@ -66,21 +69,27 @@ export default function ViewOrdersHistory() {
                 </p>
               </div>
 
-              {/* Delivery Status Dropdown */}
-              <div className="mb-4">
-                <label className="text-gray-700 mr-2">Delivery Status:</label>
+              <div className="mb-4 flex items-center gap-2">
+                <label className="text-gray-700">Delivery Status:</label>
                 <select
-                  value={order.deliveryStatus || "pending"}
-                  onChange={(e) => handleStatusChange(order.id, e.target.value)}
+                  value={statusChanges[order.id] ?? order.status ?? "pending"}
+                  onChange={(e) =>
+                    handleDropdownChange(order.id, e.target.value)
+                  }
                   className="border rounded px-2 py-1"
                 >
                   <option value="pending">Pending</option>
                   <option value="shipped">Shipped</option>
                   <option value="delivered">Delivered</option>
                 </select>
+                <button
+                  onClick={() => handleUpdateClick(order.id)}
+                  className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700"
+                >
+                  Update
+                </button>
               </div>
 
-              {/* Items with Images */}
               <ul className="mt-2 border-t pt-3 space-y-3">
                 {order.items.map((item, index) => (
                   <li

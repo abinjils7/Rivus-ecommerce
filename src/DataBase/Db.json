@@ -6,7 +6,7 @@
       "email": "admin@gmail.com",
       "password": "888888",
       "role": "admin",
-      "status": false
+      "status": true
     },
     {
       "id": "7fbc",
@@ -21,7 +21,7 @@
       "name": "Athul",
       "email": "athul@gmail.com",
       "password": "123456",
-      "status": true,
+      "status": false,
       "role": "user"
     },
     {
@@ -30,14 +30,6 @@
       "email": "abinjills0904@gmail.com",
       "password": "123456",
       "status": true,
-      "role": "user"
-    },
-    {
-      "id": "7fb0",
-      "name": "joy",
-      "email": "joy@gmail.com",
-      "password": "888888",
-      "status": false,
       "role": "user"
     },
     {
@@ -282,7 +274,8 @@
       "type": "Daily Drives",
       "price": 15000000,
       "hp": 325,
-      "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Porsche/Panamera/11350/1701081788330/front-left-side-47.jpg?tr=w-664"
+      "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Porsche/Panamera/11350/1701081788330/front-left-side-47.jpg?tr=w-664",
+      "brand": "BMW"
     },
     {
       "id": "68",
@@ -309,6 +302,24 @@
       "hp": "550",
       "price": "400000",
       "image": "https://images.unsplash.com/photo-1547744152-14d985cb937f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "bbc4261c-3608-4997-8542-8145cc55a661",
+      "name": "AMg g63 ",
+      "brand": "Mercedes-AMG",
+      "type": "suv",
+      "hp": "450",
+      "price": "10000000",
+      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/1/versions/mercedes-benz-g-class-amg-g-63-grand-edition1695818429621.jpg?q=80"
+    },
+    {
+      "id": "c3344a9f-6ce2-43fe-a794-2d3a613a44fb",
+      "name": "340i",
+      "brand": "BMW",
+      "type": "racespec",
+      "hp": "550",
+      "price": "1000000",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkbS_LSjbUB2ZKlzD2rc6LR9II40B2OsVg2qrKHzjXVUJPf-uC&s"
     }
   ],
   "orders": [
@@ -350,7 +361,7 @@
       "totalQuantity": 2,
       "totalPrice": 3240000,
       "orderDate": "2025-08-21T13:29:25.066Z",
-      "status": "delivered",
+      "status": "shipped",
       "userId": "7fbc"
     },
     {
@@ -391,7 +402,7 @@
       "totalQuantity": 2,
       "totalPrice": 4200000,
       "orderDate": "2025-08-21T13:34:54.953Z",
-      "status": "delivered",
+      "status": "shipped",
       "userId": "7fbc"
     },
     {
@@ -937,6 +948,36 @@
       "orderDate": "2025-08-27T12:14:01.641Z",
       "status": "pending",
       "userId": "04e6"
+    },
+    {
+      "id": "e6bf",
+      "customer": {
+        "name": "Abin",
+        "email": "abinjils@gmail.com",
+        "address": "wertyuiop[jhgfvccbvnbmn",
+        "city": "mxvcbnm,",
+        "state": "jhgvcxcvbn",
+        "pincode": "355535",
+        "paymentMethod": "credit-card"
+      },
+      "items": [
+        {
+          "id": "9",
+          "name": "Mercedes AMG Project ",
+          "brand": "Mercedes-AMG",
+          "type": "hypersport",
+          "hp": 1000,
+          "price": 2280000,
+          "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "quantity": 1,
+          "cartItemId": "1d0b"
+        }
+      ],
+      "totalQuantity": 1,
+      "totalPrice": 2280000,
+      "orderDate": "2025-08-28T04:02:30.811Z",
+      "status": "pending",
+      "userId": "7fbc"
     }
   ],
   "cart": [
@@ -944,18 +985,6 @@
       "id": "7d63",
       "userId": "7fbc",
       "productId": "11",
-      "quantity": 1
-    },
-    {
-      "id": "5485",
-      "userId": "7fbc",
-      "productId": "16",
-      "quantity": 1
-    },
-    {
-      "id": "06b2",
-      "userId": "7fbc",
-      "productId": "18",
       "quantity": 1
     },
     {
@@ -1025,12 +1054,6 @@
       "quantity": 1
     },
     {
-      "id": "c096",
-      "userId": "7fbc",
-      "productId": "33",
-      "quantity": 1
-    },
-    {
       "id": "2df1",
       "userId": "7fbc",
       "productId": "3",
@@ -1040,12 +1063,6 @@
       "id": "6eda",
       "userId": "7fbc",
       "productId": "5",
-      "quantity": 1
-    },
-    {
-      "id": "351c",
-      "userId": "7fbc",
-      "productId": "7",
       "quantity": 1
     },
     {
@@ -1109,40 +1126,22 @@
       "quantity": 1
     },
     {
-      "id": "e28d",
-      "userId": "7fbc",
-      "productId": "7",
-      "quantity": 1
-    },
-    {
-      "id": "afd3",
-      "userId": "7fbc",
-      "productId": "9",
-      "quantity": 1
-    },
-    {
       "id": "943b",
       "userId": "4183",
       "productId": "16",
-      "quantity": 1
-    },
-    {
-      "id": "9e13",
-      "userId": "7fbc",
-      "productId": "18",
       "quantity": 1
     }
   ],
   "wishlist": [
     {
-      "id": "f73c",
+      "id": "da4a",
       "userId": "7fbc",
-      "productId": "16",
-      "name": "Mercedes G63 AMG",
-      "type": "allterrain",
-      "price": 360000,
-      "hp": 577,
-      "image": "https://images.unsplash.com/photo-1552962599-a09af85f2555?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "productId": "9",
+      "name": "Mercedes AMG Project ",
+      "type": "hypersport",
+      "price": 2280000,
+      "hp": 1000,
+      "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ]
 }

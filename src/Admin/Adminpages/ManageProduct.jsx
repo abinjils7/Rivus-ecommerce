@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Nav from "../../UserPages/Common/Nav";
 
 export default function ManageProduct() {
+  const navigate=useNavigate()
   const { cars } = useContext(CarContext);
   const { deleteProductDB, editProductDB } = useContext(ProductContext);
   const [selectedCar, setSelectedCar] = useState(null);
@@ -44,14 +45,20 @@ export default function ManageProduct() {
     setModalOpen(false);
   };
 
-    
-  
-
   if (!cars)
     return <h1 className="text-center text-gray-500">No cars available</h1>;
+
+
+  const nav=()=>{
+    navigate("/Addproducts")
+  }
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-6">All Stocks</h1>
+      <button onClick={nav}    className="absolute top-6 right-6 px-4 py-2 bg-black text-white text-sm rounded hover:bg-gray-800 shadow transition">
+        Add Car
+      </button>
+
       {/* 3-column grid with larger cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {cars.map((car) => (
@@ -158,7 +165,7 @@ export default function ManageProduct() {
           </div>
         </div>
       )}
-       {/* <button onClick={Nav}>add</button> */}
+      {/* <button onClick={Nav}>add</button> */}
     </div>
   );
 }

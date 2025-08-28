@@ -17,7 +17,6 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  
   const register = async (name, email, password) => {
     try {
       const newUser = { name, email, password };
@@ -34,9 +33,18 @@ export const AuthProvider = ({ children }) => {
   // Login user
   const login1 = async (email, password) => {
     try {
-      const res = await axios.get(`${UserAPI}?email=${email}&password=${password}`);
+      const res = await axios.get(
+        `${UserAPI}?email=${email}&password=${password}`
+      );
       if (res.data.length > 0) {
         const loggedInUser = res.data[0];
+
+        
+        if (!loggedInUser.status) {
+          toast.error("Your account is inactive. Contact admin.");
+          return null; 
+        }
+
         setUser(loggedInUser);
         localStorage.setItem("user", JSON.stringify(loggedInUser));
         toast.success("Logged in successfully!");

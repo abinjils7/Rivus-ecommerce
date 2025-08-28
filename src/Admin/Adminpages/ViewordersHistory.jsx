@@ -5,18 +5,9 @@ import { OrderContext } from "../../Admin/AdminControllers/OrderController";
 import { toast } from "sonner";
 
 export default function ViewOrdersHistory() {
-  const [orders, setOrders] = useState([]);
   const [statusChanges, setStatusChanges] = useState({}); // store selected status per order
-  const { setOrderStatus } = useContext(OrderContext);
-
-  async function fetchOrders() {
-    try {
-      const res = await axios.get(orderApi);
-      setOrders(res.data);
-    } catch (error) {
-      console.error("Failed to load orders:", error);
-    }
-  }
+  const { setOrderStatus,orders,fetchOrders } = useContext(OrderContext);
+  
 
   useEffect(() => {
     fetchOrders();
@@ -28,7 +19,7 @@ export default function ViewOrdersHistory() {
 
   async function handleUpdateClick(orderId) {
     const newStatus = statusChanges[orderId];
-    if (!newStatus) return; // nothing selected
+    if (!newStatus) return; 
     await setOrderStatus(orderId, newStatus);
     toast.info("updated");
     fetchOrders();

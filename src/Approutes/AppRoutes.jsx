@@ -29,7 +29,7 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="/" element={<ProtectedRoute adminOnly={false}><Home1 /></ProtectedRoute>} />
+      <Route path="/" element={<ProtectedRoute adminOnly={false}><Home1/></ProtectedRoute>} />
 
       {user === null && (
         <>
@@ -52,6 +52,9 @@ function AppRoutes() {
       <Route path="/wishlist" element={<WishlistPage />} />
 
       ------------------------ADMIN-----------------------------------------------------------------------
+
+
+      
       <Route path="/admin" element={<ProtectedRoute adminOnly={true}><AdminDashboard /></ProtectedRoute>} />
       <Route path="/Addproducts" element={<ProtectedRoute adminOnly={true}><AddProducts /></ProtectedRoute>} />
       <Route path="/manageproducts" element={<ProtectedRoute adminOnly={true}><ManageProduct /></ProtectedRoute>} />

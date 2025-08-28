@@ -48,7 +48,7 @@ function Productlist() {
             filteredCars.map((car) => (
               <div
                 key={car.id}
-                className="border-2 border-gray-200 rounded-lg p-4 w-72 flex flex-col items-center text-center relative shadow hover:shadow-md transition-shadow duration-300"
+                className="border-2 border-gray-200 rounded-lg p-4 w-72 flex flex-col items-center text-center relative shadow hover:shadow-md transition-shadow transition-transform duration-300 transform hover:scale-105"
               >
                 <img
                   src={car.image}

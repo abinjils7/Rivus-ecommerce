@@ -5,7 +5,7 @@ const AddProduct = () => {
   const { addCarsDB } = useContext(ProductContext);
 
   const [formData, setFormData] = useState({
-    id: crypto.randomUUID(), // still unique, can replace with your own generator
+    id: crypto.randomUUID(), 
     name: '',
     brand: '',
     type: '',
@@ -41,14 +41,13 @@ const AddProduct = () => {
   };
 
   const handleClick = (e) => {
-    e.preventDefault(); // prevent form submit behavior
+    e.preventDefault(); 
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    addCarsDB(formData);  // call DB function directly here
+    addCarsDB(formData); 
     setIsSubmitting(false);
 
-    // Optional: Reset the form after adding
     setFormData({
       id: crypto.randomUUID(),
       name: '',
@@ -182,7 +181,7 @@ const AddProduct = () => {
           </div>
 
           <button
-            type="button"  // important: prevent automatic submit
+            type="button"  
             disabled={isSubmitting}
             onClick={handleClick}
             className="w-full bg-black hover:bg-gray-800 text-white py-2 px-4 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:opacity-50"

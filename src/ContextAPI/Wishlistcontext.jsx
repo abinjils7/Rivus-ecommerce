@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "./Authcontext";
-import { wishlistApi } from "../Api";
+import { orderApi, wishlistApi } from "../Api";
 import { toast } from "sonner";
 
 export const WishlistContext = createContext();
@@ -71,12 +71,22 @@ export const WishlistProvider = ({ children }) => {
     }
   };
 
+  async function cancelOrder(orderId) {
+      try {
+        await axios.patch(`${orderApi}/${orderId}`, { status: "cancelled" });
+        toast.error("order cancelled")
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
   return (
     <WishlistContext.Provider
       value={{
         wishlist,
         addToWishlist,
         removeFromWishlist,
+        cancelOrder,
       }}
     >
       {children}

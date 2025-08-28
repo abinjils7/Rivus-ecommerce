@@ -1,4 +1,4 @@
-// src/components/ui/card.jsx
+
 
 export function Card({ children, className = "" }) {
   return (

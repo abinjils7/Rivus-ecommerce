@@ -96,8 +96,6 @@ export default function ManageProduct() {
           </div>
         ))}
       </div>
-
-      {/* Inline Modal */}
       {modalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-2xl shadow-lg w-full max-w-md">
@@ -165,7 +163,7 @@ export default function ManageProduct() {
           </div>
         </div>
       )}
-      {/* <button onClick={Nav}>add</button> */}
+     
     </div>
   );
 }

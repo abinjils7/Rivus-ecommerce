@@ -21,7 +21,6 @@ export default function ProductControlers({ children }) {
   async function addCarsDB(formdata) {
     try {
       await axios.post(carApi, formdata);
-      // console.log("Added to backend cart:", newCarData);
       toast.success("Product adedd Successfully");
     } catch (error) {
       console.error(error);

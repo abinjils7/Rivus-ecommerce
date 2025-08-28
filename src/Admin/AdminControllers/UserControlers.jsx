@@ -25,7 +25,7 @@ export default function UserControlers({ children }) {
         status: newstate,
       });
       {
-        newstate?toast.success("user is unblocked"):toast.success("useer is blocked")
+        newstate?toast.success("user is unblocked"):toast.success("user is blocked")
       }
     } catch (err) {
       console.log(err);

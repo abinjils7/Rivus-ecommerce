@@ -33,7 +33,7 @@ function Login() {
         const loggedInUser = await login1(values.email, values.password);
 
         if (loggedInUser) {
-          // Navigate based on role
+          
           if (loggedInUser.role === "admin") {
             navigate("/admin");
           } else {

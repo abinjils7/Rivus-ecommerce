@@ -8,7 +8,7 @@ const ProtectedRoute = ({ children, adminOnly = false }) => {
 
   if (user === undefined) {
    
-    return <LoadingSpinner />;
+    return <LoadingSpinner/>;
   }
 
   if (!user) {

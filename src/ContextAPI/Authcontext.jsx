@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Login user
+
   const login1 = async (email, password) => {
     try {
       const res = await axios.get(

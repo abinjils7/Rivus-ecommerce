@@ -17,7 +17,6 @@ export default function ProductControlers({ children }) {
     }
   }
 
-
   async function addCarsDB(formdata) {
     try {
       await axios.post(carApi, formdata);
@@ -34,9 +33,6 @@ export default function ProductControlers({ children }) {
       console.log(err);
     }
   }
-
-  
-
 
   return (
     <ProductContext.Provider

@@ -41,7 +41,6 @@ export default function UserControlers({ children }) {
       console.error(error);
     }
   }
-
   return (
     <div>
       <UserContext.Provider

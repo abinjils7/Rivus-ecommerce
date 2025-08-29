@@ -10,7 +10,7 @@ export const CarProvider = ({ children }) => {
   const [filterHP, setFilterHP] = useState("");
   const [mesege, setMessage] = useState("");
 
-  // Fetch cars from API
+
   async function fetchCars() {
     try {
       const response = await axios.get(carApi); //api.js

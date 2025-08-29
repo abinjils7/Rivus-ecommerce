@@ -116,6 +116,22 @@
       "password": "222222",
       "status": true,
       "role": "user"
+    },
+    {
+      "id": "78ff",
+      "name": "albin",
+      "email": "albin@gmail.com",
+      "password": "777777",
+      "status": true,
+      "role": "user"
+    },
+    {
+      "id": "d8eb",
+      "name": "aljo",
+      "email": "aljo@gmail.com",
+      "password": "000000",
+      "status": true,
+      "role": "user"
     }
   ],
   "cars": [

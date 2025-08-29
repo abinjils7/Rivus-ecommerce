@@ -12,13 +12,14 @@ import { useAuth } from "../../ContextAPI/Authcontext";
 import { useEffect, useState } from "react";
 import { carApi, orderApi, UserAPI } from "../../Api";
 import axios from "axios";
-import Footer from "../../UserPages/Common/Footer";
+
 
 export default function AdminDashboard() {
+
   const [user, setUser] = useState([]);
   const [totoalrevenue, setTotalrevenue] = useState(0);
   const [order, setOrder] = useState([]);
-  const [stocks, setStocks] = useState(0);
+  const [stocks, setStocks] = useState([]);
   const { logout } = useAuth();
 
   useEffect(() => {
@@ -37,7 +38,7 @@ export default function AdminDashboard() {
     });
   }, []);
   useEffect(() => {
-    axios.get(`${carApi}`).then((res) => setStocks(res.data.length));
+    axios.get(`${carApi}`).then((res) => setStocks(res.data));
   }, []);
   return (
     <div className="flex min-h-screen bg-white">
@@ -100,6 +101,21 @@ export default function AdminDashboard() {
               </div>
             </CardContent>
           </Card>
+          <Card className="rounded-xl bg-white border border-gray-100 p-5 shadow-sm hover:shadow-md transition-all duration-200">
+            <CardContent className="p-0 flex items-start justify-between">
+              <div>
+                <h2 className="text-gray-500 text-xs uppercase mb-2 font-medium">
+                  Total stock
+                </h2>
+                <p className="text-2xl font-bold text-gray-800">
+                  {stocks.length}
+                </p>
+              </div>
+              <div className="bg-blue-50 p-3 rounded-lg">
+                <TrendingUp size={20} className="text-blue-500"/>
+              </div>
+            </CardContent>
+          </Card>
 
           <Card className="rounded-xl bg-white border border-gray-100 p-5 shadow-sm hover:shadow-md transition-all duration-200">
             <CardContent className="p-0 flex items-start justify-between">
@@ -157,7 +173,6 @@ export default function AdminDashboard() {
               </div>
             </CardContent>
           </Card>
-
           <Card className="rounded-xl bg-white border border-gray-100 p-5 h-[400px] shadow-sm hover:shadow-md transition-all duration-200">
             <CardContent className="h-full flex flex-col p-0">
               <div className="flex items-center justify-between mb-4">
@@ -166,7 +181,6 @@ export default function AdminDashboard() {
                 </h2>
                 <TrendingUp size={20} className="text-blue-500" />
               </div>
-
               <div className="flex-1 overflow-y-auto pr-1">
                 {order.map((u, index) => (
                   <div

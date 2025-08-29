@@ -7,9 +7,7 @@ function Cart() {
   const { cart, updateQuantity, removeFromCart, totalQuantity } =
     useContext(CartContext);
 
-    const navigate = useNavigate();
-
-  // Calculate total price
+  const navigate = useNavigate();
   const totalPrice = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
@@ -22,7 +20,6 @@ function Cart() {
     }
 
     navigate("/orderpage");
-    
   };
 
   return (
@@ -35,7 +32,6 @@ function Cart() {
             key={item.id}
             className="mb-4 p-4 border border-gray-300 rounded-lg shadow-sm flex gap-4"
           >
-           
             {item.image && (
               <img
                 src={item.image}
@@ -44,7 +40,6 @@ function Cart() {
               />
             )}
 
-           
             <div className="flex-1">
               <h3 className="text-lg font-semibold">{item.brand}</h3>
               <p className="text-gray-700">Price: ₹{item.price}</p>
@@ -53,7 +48,6 @@ function Cart() {
                 Subtotal: ₹{item.price * item.quantity}
               </p>
 
-            
               <div className="flex items-center gap-2 mt-3">
                 <button
                   onClick={() => updateQuantity(item.id, +1)}
@@ -83,7 +77,9 @@ function Cart() {
 
       <hr className="my-4" />
       <p className="text-lg">Total Items: {totalQuantity}</p>
-      <p className="text-xl font-bold">Total Price: ₹{totalPrice.toLocaleString()}</p>
+      <p className="text-xl font-bold">
+        Total Price: ₹{totalPrice.toLocaleString()}
+      </p>
 
       <button
         onClick={handlePlaceOrder}

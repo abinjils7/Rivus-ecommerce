@@ -58,8 +58,6 @@ export default function ManageProduct() {
       <button onClick={nav}    className="absolute top-6 right-6 px-4 py-2 bg-black text-white text-sm rounded hover:bg-gray-800 shadow transition">
         Add Car
       </button>
-
-      {/* 3-column grid with larger cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {cars.map((car) => (
           <div

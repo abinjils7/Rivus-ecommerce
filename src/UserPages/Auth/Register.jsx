@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../ContextAPI/Authcontext";
 import { useFormik } from "formik";
@@ -7,6 +7,13 @@ import * as Yup from "yup";
 function RegisterPage() {
   const navigate = useNavigate();
   const { register } = useAuth();
+  const [form, setform] = useState({
+    name: "",
+    email: "",
+    password: "",
+    status: true,
+    role: "user",
+  });
 
   const formik = useFormik({
     initialValues: {
@@ -32,15 +39,24 @@ function RegisterPage() {
         .min(6, "Password must be at least 6 characters")
         .required("Password is required"),
     }),
+
     onSubmit: (values) => {
-      register(values.name, values.email, values.password);
+      const newUser = {
+        name: values.name,
+        email: values.email,
+        password: values.password,
+        status: true,
+        role: "user",
+      };
+
+      
+      register(newUser);
       navigate("/login");
     },
   });
 
   return (
     <>
-      {/* Brand Heading */}
       <h1 className="ml-10 mt-6 text-4xl">
         <b>RIVUS</b>Cars<span className="text-xs">TM</span>
       </h1>
@@ -57,7 +73,6 @@ function RegisterPage() {
             Fill in your details to register.
           </p>
 
-          {/* Name */}
           <input
             type="text"
             name="name"
@@ -70,10 +85,11 @@ function RegisterPage() {
             }`}
           />
           {formik.touched.name && formik.errors.name && (
-            <div className="text-red-500 text-sm mb-2">{formik.errors.name}</div>
+            <div className="text-red-500 text-sm mb-2">
+              {formik.errors.name}
+            </div>
           )}
 
-          {/* Email */}
           <input
             type="email"
             name="email"
@@ -86,7 +102,9 @@ function RegisterPage() {
             }`}
           />
           {formik.touched.email && formik.errors.email && (
-            <div className="text-red-500 text-sm mb-2">{formik.errors.email}</div>
+            <div className="text-red-500 text-sm mb-2">
+              {formik.errors.email}
+            </div>
           )}
 
           {/* Password */}
@@ -102,7 +120,9 @@ function RegisterPage() {
             }`}
           />
           {formik.touched.password && formik.errors.password && (
-            <div className="text-red-500 text-sm mb-2">{formik.errors.password}</div>
+            <div className="text-red-500 text-sm mb-2">
+              {formik.errors.password}
+            </div>
           )}
 
           {/* Submit Button */}

@@ -1,61 +1,62 @@
-import React, { useContext, useState } from 'react';
-import { ProductContext } from '../AdminControllers/ProductControlers';
+import React, { useContext, useState } from "react";
+import { ProductContext } from "../AdminControllers/ProductControlers";
 
 const AddProduct = () => {
   const { addCarsDB } = useContext(ProductContext);
 
   const [formData, setFormData] = useState({
-    id: crypto.randomUUID(), 
-    name: '',
-    brand: '',
-    type: '',
-    hp: '',
-    price: '',
-    image: ''
+    id: crypto.randomUUID(),
+    name: "",
+    brand: "",
+    type: "",
+    hp: "",
+    price: "",
+    image: "",
   });
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value
-    }));
-    if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: '' }));
-    }
+    const fieldName = e.target.name;
+    const fieldValue = e.target.value;
+    setFormData({
+      ...formData,
+      [fieldName]: fieldValue,
+    });
   };
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.brand.trim()) newErrors.brand = 'Brand is required';
-    if (!formData.type) newErrors.type = 'Type is required';
-    if (!formData.hp || isNaN(formData.hp) || formData.hp < 0) newErrors.hp = 'Valid HP required';
-    if (!formData.price || isNaN(formData.price) || formData.price < 0) newErrors.price = 'Valid price required';
-    if (!formData.image.trim()) newErrors.image = 'Image URL is required';
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.brand.trim()) newErrors.brand = "Brand is required";
+    if (!formData.type) newErrors.type = "Type is required";
+    if (!formData.hp || isNaN(formData.hp) || Number(formData.hp) <= 0)
+      newErrors.hp = "Valid positive HP required";
+    if (!formData.price || isNaN(formData.price) || Number(formData.price) <= 0)
+      newErrors.price = "Valid positive price required";
+    if (!formData.image.trim() || !/^https?:\/\/.+\..+/.test(formData.image))
+      newErrors.image = "Valid Image URL is required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleClick = (e) => {
-    e.preventDefault(); 
-    if (!validateForm()) return;
+    e.preventDefault();
+    if (!validateForm()) return; // stop if form invalid
 
     setIsSubmitting(true);
-    addCarsDB(formData); 
+    addCarsDB(formData);
     setIsSubmitting(false);
 
     setFormData({
       id: crypto.randomUUID(),
-      name: '',
-      brand: '',
-      type: '',
-      hp: '',
-      price: '',
-      image: ''
+      name: "",
+      brand: "",
+      type: "",
+      hp: "",
+      price: "",
+      image: "",
     });
   };
 
@@ -81,10 +82,14 @@ const AddProduct = () => {
               onChange={handleChange}
               placeholder="e.g., 911 GT3 RS"
               className={`w-full px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-1 ${
-                errors.name ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'
+                errors.name
+                  ? "border-red-500 focus:ring-red-500"
+                  : "border-gray-300 focus:ring-blue-500"
               }`}
             />
-            {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name}</p>}
+            {errors.name && (
+              <p className="mt-1 text-xs text-red-600">{errors.name}</p>
+            )}
           </div>
 
           <div>
@@ -98,10 +103,14 @@ const AddProduct = () => {
               onChange={handleChange}
               placeholder="e.g., Porsche"
               className={`w-full px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-1 ${
-                errors.brand ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'
+                errors.brand
+                  ? "border-red-500 focus:ring-red-500"
+                  : "border-gray-300 focus:ring-blue-500"
               }`}
             />
-            {errors.brand && <p className="mt-1 text-xs text-red-600">{errors.brand}</p>}
+            {errors.brand && (
+              <p className="mt-1 text-xs text-red-600">{errors.brand}</p>
+            )}
           </div>
 
           <div className="grid grid-cols-2 gap-3">
@@ -114,16 +123,20 @@ const AddProduct = () => {
                 value={formData.type}
                 onChange={handleChange}
                 className={`w-full px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-1 ${
-                  errors.type ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'
+                  errors.type
+                    ? "border-red-500 focus:ring-red-500"
+                    : "border-gray-300 focus:ring-blue-500"
                 }`}
               >
                 <option value="">Select Type</option>
                 <option value="racespec">Race Spec</option>
                 <option value="sports">Daily</option>
                 <option value="luxury">Luxury</option>
-                <option value="suv">Allterrains</option>
+                <option value="allterains">Allterrains</option>
               </select>
-              {errors.type && <p className="mt-1 text-xs text-red-600">{errors.type}</p>}
+              {errors.type && (
+                <p className="mt-1 text-xs text-red-600">{errors.type}</p>
+              )}
             </div>
 
             <div>
@@ -137,10 +150,14 @@ const AddProduct = () => {
                 onChange={handleChange}
                 placeholder="e.g., 518"
                 className={`w-full px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-1 ${
-                  errors.hp ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'
+                  errors.hp
+                    ? "border-red-500 focus:ring-red-500"
+                    : "border-gray-300 focus:ring-blue-500"
                 }`}
               />
-              {errors.hp && <p className="mt-1 text-xs text-red-600">{errors.hp}</p>}
+              {errors.hp && (
+                <p className="mt-1 text-xs text-red-600">{errors.hp}</p>
+              )}
             </div>
           </div>
 
@@ -156,10 +173,14 @@ const AddProduct = () => {
                 onChange={handleChange}
                 placeholder="e.g., 384000"
                 className={`w-full px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-1 ${
-                  errors.price ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'
+                  errors.price
+                    ? "border-red-500 focus:ring-red-500"
+                    : "border-gray-300 focus:ring-blue-500"
                 }`}
               />
-              {errors.price && <p className="mt-1 text-xs text-red-600">{errors.price}</p>}
+              {errors.price && (
+                <p className="mt-1 text-xs text-red-600">{errors.price}</p>
+              )}
             </div>
 
             <div>
@@ -173,15 +194,19 @@ const AddProduct = () => {
                 onChange={handleChange}
                 placeholder="https://example.com/image.jpg"
                 className={`w-full px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-1 ${
-                  errors.image ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-blue-500'
+                  errors.image
+                    ? "border-red-500 focus:ring-red-500"
+                    : "border-gray-300 focus:ring-blue-500"
                 }`}
               />
-              {errors.image && <p className="mt-1 text-xs text-red-600">{errors.image}</p>}
+              {errors.image && (
+                <p className="mt-1 text-xs text-red-600">{errors.image}</p>
+              )}
             </div>
           </div>
 
           <button
-            type="button"  
+            type="button"
             disabled={isSubmitting}
             onClick={handleClick}
             className="w-full bg-black hover:bg-gray-800 text-white py-2 px-4 rounded-md text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:opacity-50"

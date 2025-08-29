@@ -44,7 +44,7 @@ export const CartProvider = ({ children }) => {
     if (!user?.id) return toast.error("Login required");
 
     if (cart.some((item) => item.id === product.id)) {
-      // Increase quantity if already in cart
+     
       setCart((prev) =>
         prev.map((item) =>
           item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
@@ -91,7 +91,6 @@ export const CartProvider = ({ children }) => {
 
   const clearCart = async () => {
     try {
-      // Remove all items from backend
       await Promise.all(cart.map((item) => item.cartItemId && axios.delete(`${cartApi}/${item.cartItemId}`)));
       setCart([]);
       toast.success("Cart cleared");

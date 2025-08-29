@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { CartContext } from "../../ContextAPI/Cartcontext";
 import { useContext } from "react";
+import { toast } from "sonner";
 
 function Cart() {
   const { cart, updateQuantity, removeFromCart, totalQuantity } =
@@ -16,7 +17,7 @@ function Cart() {
 
   const handlePlaceOrder = () => {
     if (cart.length === 0) {
-      alert("Your cart is empty. Add some items first!");
+      toast.info("Your cart is empty. Add some items first!");
       return;
     }
 

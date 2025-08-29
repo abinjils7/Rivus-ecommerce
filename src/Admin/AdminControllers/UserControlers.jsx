@@ -35,7 +35,7 @@ export default function UserControlers({ children }) {
   async function deleteuserDB(userid) {
     try {
       await axios.delete(`${UserAPI}/${userid}`);
-      console.log("Deleted from backend cart:");
+      console.log("Deleted");
       toast.success(" Deleted Successfully");
     } catch (error) {
       console.error(error);

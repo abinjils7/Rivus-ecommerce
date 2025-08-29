@@ -10,7 +10,7 @@ export default function ProductControlers({ children }) {
   async function deleteProductDB(productId) {
     try {
       await axios.delete(`${carApi}/${productId}`);
-      console.log("Deleted from backend cart:", productId);
+      console.log("Deleted", productId);
       toast.success("Product Deleted Successfully");
     } catch (error) {
       console.error(error);

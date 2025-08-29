@@ -40,7 +40,7 @@ export default function ViewOrdersHistory() {
               key={order.id}
               className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
-              {/* Order Header */}
+          
               <div className="flex justify-between items-center border-b pb-3 mb-4">
                 <h3 className="text-lg font-semibold text-gray-800">
                   Order ID #{order.id}
@@ -65,7 +65,7 @@ export default function ViewOrdersHistory() {
                 <select
                   value={statusChanges[order.id] ?? order.status ?? "pending"}
                   onChange={(e) =>
-                    handleDropdownChange(order.id, e.target.value)
+                    handleDropdownChange(order.id,e.target.value)
                   }
                   className="border rounded px-2 py-1"
                 >

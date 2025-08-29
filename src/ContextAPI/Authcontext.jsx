@@ -6,7 +6,7 @@ import { toast } from "sonner";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(undefined); // undefined = loading
+  const [user, setUser] = useState();
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -17,12 +17,11 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const register = async (name, email, password) => {
+  const register = async (newUser) => {
     try {
-      const newUser = { name, email, password };
-      const res = await axios.post(UserAPI, newUser);
+      const res = await axios.post(UserAPI,newUser);
       setUser(res.data);
-      localStorage.setItem("user", JSON.stringify(res.data));
+      // localStorage.setItem("user", JSON.stringify(res.data));
       toast.success("Registered successfully!");
     } catch (err) {
       console.error(err);
@@ -38,8 +37,6 @@ export const AuthProvider = ({ children }) => {
       );
       if (res.data.length > 0) {
         const loggedInUser = res.data[0];
-
-        
         if (!loggedInUser.status) {
           toast.error("Your account is inactive. Contact admin.");
           return null; 

@@ -45,6 +45,7 @@
       "name": "sara",
       "email": "sara@gmail.com",
       "password": "111111",
+      "status": false,
       "role": "user"
     },
     {
@@ -52,6 +53,68 @@
       "name": "anson",
       "email": "anson@gmail.com",
       "password": "pppppp",
+      "status": true,
+      "role": "user"
+    },
+    {
+      "id": "a03c",
+      "name": "ALBIN",
+      "email": "albin@gmail.com",
+      "status": false,
+      "password": "000000",
+      "role": "user"
+    },
+    {
+      "id": "09f8",
+      "name": "adhil",
+      "email": "adhil@gmail.com",
+      "status": false,
+      "password": "000000",
+      "role": "user"
+    },
+    {
+      "id": "05c3",
+      "name": "shabas",
+      "email": "shabas@gmail.com",
+      "status": false,
+      "password": "000000",
+      "role": "user"
+    },
+    {
+      "id": "f724",
+      "name": "adasssssss",
+      "email": "adhilp29@gmail.com",
+      "status": false,
+      "password": "999999",
+      "role": "user"
+    },
+    {
+      "id": "1fb0",
+      "name": "ansil",
+      "email": "ansil@gmail.com",
+      "password": "999999"
+    },
+    {
+      "id": "5719",
+      "name": "albert",
+      "email": "albert@gmail.com",
+      "password": "7777777",
+      "status": true
+    },
+    {
+      "id": "91db",
+      "name": "lopes",
+      "email": "lopes@gmail.com",
+      "password": "111111",
+      "status": true,
+      "role": "user"
+    },
+    {
+      "id": "9223",
+      "name": "noa",
+      "email": "noa@gmail.com",
+      "password": "222222",
+      "status": true,
       "role": "user"
     }
   ],
@@ -1017,6 +1080,66 @@
       "orderDate": "2025-08-28T05:42:48.517Z",
       "status": "delivered",
       "userId": "7fbc"
+    },
+    {
+      "id": "48f7",
+      "customer": {
+        "name": "aaaaaaa",
+        "email": "admin@gmail.com",
+        "address": "aaaaaaaaaa",
+        "city": "aaaaaaa",
+        "state": "krala",
+        "pincode": "333332",
+        "paymentMethod": "credit-card"
+      },
+      "items": [
+        {
+          "id": "9",
+          "name": "Mercedes AMG Project ",
+          "brand": "Mercedes-AMG",
+          "type": "hypersport",
+          "hp": 1000,
+          "price": 2280000,
+          "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "quantity": 1,
+          "cartItemId": "82b7"
+        }
+      ],
+      "totalQuantity": 1,
+      "totalPrice": 2280000,
+      "orderDate": "2025-08-29T05:58:40.754Z",
+      "status": "pending",
+      "userId": "9223"
+    },
+    {
+      "id": "8064",
+      "customer": {
+        "name": "noa",
+        "email": "noa@gmail.com",
+        "address": "kkkkkkkkkkkkkkkkkkkkk",
+        "city": "kkkkkkkkkkkkkkkk",
+        "state": "kkkkkkkkkkkkkkkkk",
+        "pincode": "123456",
+        "paymentMethod": "credit-card"
+      },
+      "items": [
+        {
+          "id": "16",
+          "name": "Mercedes G63 AMG",
+          "brand": "Mercedes-AMG",
+          "type": "allterrain",
+          "hp": 577,
+          "price": 360000,
+          "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkHfqLPsCEO5IWXo8H8jX42jbdJxzQ_IOpkhnZJWSktJM4hND8J1pDapI&s",
+          "quantity": 1,
+          "cartItemId": "c44b"
+        }
+      ],
+      "totalQuantity": 1,
+      "totalPrice": 360000,
+      "orderDate": "2025-08-29T06:06:34.755Z",
+      "status": "cancelled",
+      "userId": "9223"
     }
   ],
   "cart": [
@@ -1193,6 +1316,16 @@
       "price": 13000000,
       "hp": 362,
       "image": "https://nafta.starconnect-ce.i.mercedes-benz.com/iris/iris.jpg?COSY-EU-100-1713d0VXqaSFqtyO67PobzIr3eWsrrCsdRRzwQZQ9vZbMw3SGtGyjtsd2vGcUfp86XGEuiEJ0l34xOB2NQcbApjkbI5uVmMQC3qE3kzNRJ9m7jA6ohKV5Kh%25vqCr%25yLRzYXYaxPXWrH1eJtn8ws8noiZUidM4FGSMTg90h26PDBSbSeWAtRtsd6J3cUfKLcXGEvaVJ0lgYxOB2PBqbApekRI5usmZQC3UXOkzNGJNm7j0OvhKVB%25t%25vqA89yLR5i2YaxVXSrH1qJ%25n8wRQSoiZeIQM6oY2ulnKkzNU%25Km7jseFhKVzKE%25vq7uqyLRacXYaxHahrH18B%25n8wioyoiCpBxySfD2MpC75U3pZbMFwRPPW3SN9hFNTmj32v2bwbU15zsRG1gdPL4LzC3aB5Nt&fb=1&POV=BE040,PZM&width=768&height=320&BKGND=9&IMGT=P27"
+    },
+    {
+      "id": "1ff1",
+      "userId": "9223",
+      "productId": "9",
+      "name": "Mercedes AMG Project ",
+      "type": "hypersport",
+      "price": 2280000,
+      "hp": 1000,
+      "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ]
 }

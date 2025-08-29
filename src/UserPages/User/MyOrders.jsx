@@ -3,51 +3,33 @@ import { useAuth } from "../../ContextAPI/Authcontext";
 import { Link } from "react-router-dom";
 import { orderApi } from "../../Api";
 import { WishlistContext } from "../../ContextAPI/WishlistContext";
+import axios from "axios";
 
 function MyOrders() {
   const { user } = useAuth();
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filterStatus, setFilterStatus] = useState("all");
-  const {cancelOrder}=useContext(WishlistContext)
-
- 
+  const { cancelOrder } = useContext(WishlistContext);
 
   useEffect(() => {
-    const fetchOrders = async () => {
-      try {
-        const response = await fetch(`${orderApi}?userId=${user.id}`);
+    if (!user) return;
 
-        if (response.ok) {
-          const ordersData = await response.json();
-          setOrders(ordersData);
-        } else {
-          console.warn("API request failed, using localStorage fallback");
-          const ordersData = JSON.parse(localStorage.getItem("orderHistory") || "[]");
-          const userOrders = ordersData.filter((order) => order.userId === user.id);
-          setOrders(userOrders);
-        }
-      } catch (error) {
-        console.error("Failed to load orders:", error);
-        const ordersData = JSON.parse(localStorage.getItem("orderHistory") || "[]");
-        const userOrders = ordersData.filter((order) => order.userId === user.id);
-        setOrders(userOrders);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (user) {
-      fetchOrders();
-    }
-  }, [user]);
+    axios
+      .get(`${orderApi}?userId=${user.id}`)
+      .then((res) => setOrders(res.data))
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false));
+  }, );
 
   const filteredOrders =
     filterStatus === "all"
       ? orders
-      : orders.filter((order) => (order.status || "").toLowerCase() === filterStatus.toLowerCase());
+      : orders.filter(
+          (order) =>
+            (order.status || "").toLowerCase() === filterStatus.toLowerCase()
+        );
 
-  // Map order status to badge colors
   const getStatusClass = (status) => {
     switch ((status || "").toLowerCase()) {
       case "pending":
@@ -72,7 +54,9 @@ function MyOrders() {
       <div className="p-6 max-w-6xl mx-auto">
         <h2 className="text-2xl font-bold mb-6">My Orders</h2>
         <div className="flex justify-center items-center h-64">
-          <div className="animate-pulse text-gray-500">Loading your orders...</div>
+          <div className="animate-pulse text-gray-500">
+            Loading your orders...
+          </div>
         </div>
       </div>
     );
@@ -110,16 +94,20 @@ function MyOrders() {
             <button
               onClick={() => setFilterStatus("pending")}
               className={`px-3 py-1 rounded-full text-sm ${
-                filterStatus === "pending" ? "bg-yellow-500 text-white" : "bg-gray-200"
+                filterStatus === "pending"
+                  ? "bg-yellow-500 text-white"
+                  : "bg-gray-200"
               }`}
             >
               Pending
             </button>
-            
+
             <button
               onClick={() => setFilterStatus("delivered")}
               className={`px-3 py-1 rounded-full text-sm ${
-                filterStatus === "delivered" ? "bg-green-600 text-white" : "bg-gray-200"
+                filterStatus === "delivered"
+                  ? "bg-green-600 text-white"
+                  : "bg-gray-200"
               }`}
             >
               Delivered
@@ -127,7 +115,9 @@ function MyOrders() {
             <button
               onClick={() => setFilterStatus("cancelled")}
               className={`px-3 py-1 rounded-full text-sm ${
-                filterStatus === "cancelled" ? "bg-red-500 text-white" : "bg-gray-200"
+                filterStatus === "cancelled"
+                  ? "bg-red-500 text-white"
+                  : "bg-gray-200"
               }`}
             >
               Cancelled
@@ -144,7 +134,9 @@ function MyOrders() {
                 {/* Order Header */}
                 <div className="bg-gray-50 p-4 flex flex-wrap justify-between items-center">
                   <div>
-                    <div className="font-medium">Order #{order.id || order.orderNumber}</div>
+                    <div className="font-medium">
+                      Order #{order.id || order.orderNumber}
+                    </div>
                     <div className="text-sm text-gray-500">
                       Placed on {formatDate(order.orderDate || order.createdAt)}
                     </div>
@@ -155,11 +147,12 @@ function MyOrders() {
                         order.status
                       )}`}
                     >
-                      {(order.status || "Unknown")
-                        .charAt(0)
-                        .toUpperCase() + (order.status || "Unknown").slice(1)}
+                      {(order.status || "Unknown").charAt(0).toUpperCase() +
+                        (order.status || "Unknown").slice(1)}
                     </span>
-                    <div className="font-bold">₹{order.totalPrice || order.total}</div>
+                    <div className="font-bold">
+                      ₹{order.totalPrice || order.total}
+                    </div>
                   </div>
                 </div>
 
@@ -172,36 +165,54 @@ function MyOrders() {
                     >
                       <div className="w-16 h-16 flex-shrink-0">
                         <img
-                          src={item.image || item.productImage || "/placeholder-image.jpg"}
+                          src={
+                            item.image ||
+                            item.productImage ||
+                            "/placeholder-image.jpg"
+                          }
                           alt={item.brand || item.name}
                           className="w-full h-full object-cover rounded"
                         />
                       </div>
                       <div className="ml-4 flex-grow">
-                        <h4 className="font-medium">{item.brand || item.name}</h4>
-                        {item.model && <p className="text-sm text-gray-600">{item.model}</p>}
+                        <h4 className="font-medium">
+                          {item.brand || item.name}
+                        </h4>
+                        {item.model && (
+                          <p className="text-sm text-gray-600">{item.model}</p>
+                        )}
                         <p className="text-sm text-gray-600">
                           Quantity: {item.quantity}
                         </p>
                         {item.size && (
-                          <p className="text-sm text-gray-600">Size: {item.size}</p>
+                          <p className="text-sm text-gray-600">
+                            Size: {item.size}
+                          </p>
                         )}
                         {item.color && (
-                          <p className="text-sm text-gray-600">Color: {item.color}</p>
+                          <p className="text-sm text-gray-600">
+                            Color: {item.color}
+                          </p>
                         )}
                       </div>
                       <div className="text-right">
-                        <p className="font-medium">₹{item.price * item.quantity}</p>
-                        <p className="text-sm text-gray-600">₹{item.price} each</p>
+                        <p className="font-medium">
+                          ₹{item.price * item.quantity}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          ₹{item.price} each
+                        </p>
                       </div>
                     </div>
                   ))}
                 </div>
 
-               
                 <div className="bg-gray-50 p-4 flex justify-end space-x-3">
                   {(order.status || "").toLowerCase() === "pending" && (
-                    <button  onClick={()=>cancelOrder(order.id)}className="px-4 py-2 bg-red-500 text-white rounded text-sm hover:bg-red-600">
+                    <button
+                      onClick={() => cancelOrder(order.id)}
+                      className="px-4 py-2 bg-red-500 text-white rounded text-sm hover:bg-red-600"
+                    >
                       Cancel Order
                     </button>
                   )}

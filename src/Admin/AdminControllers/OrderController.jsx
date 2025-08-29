@@ -5,16 +5,18 @@ import { orderApi } from "../../Api";
 export const OrderContext = createContext();
 
 export default function OrderController({ children }) {
+
   async function setOrderStatus(orderId, newStatus) {
     try {
       await axios.patch(`${orderApi}/${orderId}`, { status: newStatus });
-      console.log(`Order ${orderId} status updated to ${newStatus}`);
+      console.log(`${newStatus}`);
     } catch (err) {
-      console.error("Failed to update order status:", err);
+      console.error(err);
     }
   }
 
   const [orders, setOrders] = useState([]);
+  
   async function fetchOrders() {
     try {
       const res = await axios.get(orderApi);

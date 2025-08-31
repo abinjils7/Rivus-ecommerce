@@ -37,7 +37,6 @@ export const CarProvider = ({ children }) => {
 
     return matchesSearch && matchesHP;
   });
-
   return (
     <CarContext.Provider
       value={{

@@ -28,8 +28,8 @@ export default function HeroSection() {
             Drive beyond expectations — premium performance
           </p>
           <a
-            // href="/colections"
-            href="/marketplace"
+            href="/colections"
+            // href="/marketplace"
             className="mt-6 inline-flex items-center bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-full transition"
           >
             Explore Latest Collection

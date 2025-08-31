@@ -3,12 +3,12 @@ import { Navigate } from "react-router-dom";
 import { useAuth } from "../ContextAPI/Authcontext";
 import LoadingSpinner from "../UserPages/Common/Loadingspinner";
 
-const ProtectedRoute = ({ children, adminOnly = false }) => {
+const ProtectedRoute = ({ children, adminOnly = false, userOnly = false }) => {
+  
   const { user } = useAuth();
 
   if (user === undefined) {
-   
-    return <LoadingSpinner/>;
+    return <LoadingSpinner />;
   }
 
   if (!user) {
@@ -19,7 +19,12 @@ const ProtectedRoute = ({ children, adminOnly = false }) => {
     return <Navigate to="/" replace />;
   }
 
+  if (userOnly && user.role !== "user") {
+    return <Navigate to="/admin" replace />;
+  }
+
   return children;
 };
 
 export default ProtectedRoute;
+

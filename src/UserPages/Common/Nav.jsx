@@ -48,12 +48,12 @@ export default function Nav() {
             >
               Cars
             </a>
-            <a
+            {/* <a
               href="/ordhistory"
               className="hover:text-indigo-600 transition duration-300"
             >
               Orders
-            </a>
+            </a> */}
             <a
               href="/testdrive"
               className="hover:text-indigo-600 transition duration-300"
@@ -134,12 +134,12 @@ export default function Nav() {
             >
               Cars
             </a>
-            <a
+            {/* <a
               href="/ordhistory"
               className="hover:text-indigo-600 transition duration-300"
             >
               Orders
-            </a>
+            </a> */}
             <a
               href="/testdrive"
               className="hover:text-indigo-600 transition duration-300"

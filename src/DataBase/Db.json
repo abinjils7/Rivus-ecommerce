@@ -25,14 +25,6 @@
       "role": "user"
     },
     {
-      "id": "3c6f",
-      "name": "Abin",
-      "email": "abinjills0904@gmail.com",
-      "password": "123456",
-      "status": true,
-      "role": "user"
-    },
-    {
       "id": "a087",
       "name": "lucas",
       "email": "lucas@gmail.com",
@@ -122,181 +114,11 @@
       "name": "albin",
       "email": "albin@gmail.com",
       "password": "777777",
-      "status": true,
-      "role": "user"
-    },
-    {
-      "id": "d8eb",
-      "name": "aljo",
-      "email": "aljo@gmail.com",
-      "password": "000000",
-      "status": true,
+      "status": false,
       "role": "user"
     }
   ],
   "cars": [
-    {
-      "id": "7",
-      "name": "Bugatti Chiron",
-      "brand": "Bugatti",
-      "type": "hypersport",
-      "hp": 1500,
-      "price": 2520000,
-      "image": "https://images.unsplash.com/photo-1566023888476-6f17e362fbb7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8QnVnYXR0aSUyMENoaXJvbnxlbnwwfHwwfHx8MA%3D%3D"
-    },
-    {
-      "id": "9",
-      "name": "Mercedes AMG Project ",
-      "brand": "Mercedes-AMG",
-      "type": "hypersport",
-      "hp": 1000,
-      "price": 2280000,
-      "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-      "id": "16",
-      "name": "Mercedes G63 AMG",
-      "brand": "Mercedes-AMG",
-      "type": "allterrain",
-      "hp": 577,
-      "price": 360000,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkHfqLPsCEO5IWXo8H8jX42jbdJxzQ_IOpkhnZJWSktJM4hND8J1pDapI&s"
-    },
-    {
-      "id": "18",
-      "name": "Lamborghini Urus Performante v12",
-      "brand": "Lamborghini",
-      "type": "allterrain",
-      "hp": "655",
-      "price": 420000,
-      "image": "https://images.unsplash.com/photo-1627140290942-7c8f9f56e870?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TGFtYm9yZ2hpbmklMjBVcnVzfGVufDB8fDB8fHww"
-    },
-    {
-      "id": "20",
-      "name": "Bentley Bentayga Speed",
-      "brand": "Bentley",
-      "type": "allterrain",
-      "hp": 626,
-      "price": 456000,
-      "image": "https://www.bentleymotors.com/content/dam/bm/websites/bmcom/bentleymotors-com/models/26my/bentayga-speed/Media%20Group%201.jpg/_jcr_content/renditions/original.image_file.768.576.file/Media%20Group%201.jpg"
-    },
-    {
-      "id": "24",
-      "name": "Porsche Macan GTS",
-      "brand": "Porsche",
-      "type": "allterrain",
-      "hp": 434,
-      "price": 192000,
-      "image": "https://images-porsche.imgix.net/-/media/B655872B7C7B44D2A06C3A80BFE42838_C247ECCC28104A91A61311EE42E7DFBF_MA22T3EOX0003-macan-gts-driving?w=600&q=85&crop=faces%2Centropy%2Cedges&auto=format"
-    },
-    {
-      "id": "26",
-      "name": "Ford Raptor R",
-      "brand": "Ford",
-      "type": "allterrain",
-      "hp": 700,
-      "price": 180000,
-      "image": "https://www.ford.com/is/image/content/dam/brand_ford/en_us/brand/trucks/f150/reveal_f-150_raptorR/dm/23_FRD_F15_Raptor_R_58620.tif?croppathe=1_3x2&wid=640"
-    },
-    {
-      "id": "31",
-      "name": "BMW M2 CS",
-      "brand": "BMW",
-      "type": "racespec",
-      "hp": 444,
-      "price": 132000,
-      "image": "https://bmw.scene7.com/is/image/BMW/BMW-MY26-M2CS-g87_cs_dynamics_fb-retouched:16to9?fmt=webp&wid=2560&hei=1440"
-    },
-    {
-      "id": "33",
-      "name": "BMW M5 CS",
-      "brand": "BMW",
-      "type": "racespec",
-      "hp": 627,
-      "price": 228000,
-      "image": "https://s3.amazonaws.com/bmwmedia.iconicweb.com/mediasite/libraryImages/P90411290_highRes__mid.jpg"
-    },
-    {
-      "id": "37",
-      "name": "AMG GT R",
-      "brand": "Mercedes-AMG",
-      "type": "racespec",
-      "hp": 577,
-      "price": 312000,
-      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/20865/amg-gt-exterior-right-front-three-quarter-60800.jpeg?q=80"
-    },
-    {
-      "id": "41",
-      "name": "911 GT3 RS",
-      "brand": "Porsche",
-      "type": "racespec",
-      "hp": 518,
-      "price": 384000,
-      "image": "https://images.unsplash.com/photo-1693149351428-15a4961d698d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cG9yc2NoZSUyMGd0M3JzfGVufDB8fDB8fHww"
-    },
-    {
-      "id": "43",
-      "name": "911 GT2 RS",
-      "brand": "Porsche",
-      "type": "racespec",
-      "hp": 700,
-      "price": 420000,
-      "image": "https://imgd.aeplcdn.com/664x374/cw/specialVersions/5838.jpg?v=20180710063832&q=80"
-    },
-    {
-      "id": "45",
-      "name": "Mitsubishi Lancer Evo VI TME",
-      "brand": "Mitsubishi",
-      "type": "daily",
-      "hp": 280,
-      "price": 60000,
-      "image": "http://tme-registry.com/wp-content/uploads/2021/04/photoNo1-2-3-4-1.jpg"
-    },
-    {
-      "id": "46",
-      "name": "Porsche 911 Carrera",
-      "brand": "Porsche",
-      "type": "luxury",
-      "hp": 379,
-      "price": 204000,
-      "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Porsche/911/11757/1717680690776/front-left-side-47.jpg?tr=w-664"
-    },
-    {
-      "id": "48",
-      "name": "2026 LC 500 Inspiration",
-      "brand": "Lexus",
-      "type": "luxury",
-      "hp": 471,
-      "price": 240000,
-      "image": "https://tmna.aemassets.toyota.com/is/image/toyota/lexus/images/models/lc/2026/large-feature/promo/lexus-lc-promo-desktop-1920x640-LEX-FLN-MY26-0007.jpg?wid=1920&hei=640"
-    },
-    {
-      "id": "50",
-      "name": "Jaguar F-TYPE R",
-      "brand": "Jaguar",
-      "type": "luxury",
-      "hp": 575,
-      "price": 192000,
-      "image": "https://www.topgear.com/sites/default/files/2024/03/JAGUAR%20F%20-TYPE%20KT9.jpg"
-    },
-    {
-      "id": "52",
-      "name": "Aston Martin DB12",
-      "brand": "Aston Martin",
-      "type": "luxury",
-      "hp": 671,
-      "price": 504000,
-      "image": "https://www.astonmartin.com/-/media/models---db12/db12_exterior_tiles_grille_2.png?mw=1080&rev=a49f048be47744c8aebccdab2a6fc806&extension=webp&hash=7C8A3001B93FA701C6404DF4FE8A386F"
-    },
-    {
-      "id": "54",
-      "name": "McLaren GT",
-      "brand": "McLaren",
-      "type": "luxury",
-      "hp": 612,
-      "price": 480000,
-      "image": "https://mclaren.scene7.com/is/image/mclaren/GT%20Front34%20Dynamic5_Defy%20the%20Limits:crop-16x9?wid=1920&hei=1080"
-    },
     {
       "id": "56",
       "name": "Rolls-Royce Wraith Black Badge",
@@ -308,11 +130,11 @@
     },
     {
       "id": "61",
-      "name": "BMW i4",
+      "name": "BMW i4m",
       "type": "Daily Drives",
       "price": 8000000,
       "hp": 335,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW5WzWRjUnh6NRYTTj0grWFdSWX89D0lFIzanyReaBbEDSeWCvX2hwEmKexBeQ2uDrwzI&usqp=CAU",
+      "image": "https://images.unsplash.com/photo-1727994832515-7888b6edd884?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aTR8ZW58MHx8MHx8fDA%3D",
       "brand": "BMW"
     },
     {
@@ -321,7 +143,7 @@
       "type": "Daily Drives",
       "price": 9800000,
       "hp": 453,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcwtSa48ZsPxMPu67rdB2O2FgCw3Ss7McsGby05jjQjGWx3wkuWZ-s&usqp=CAE&s"
+      "image": "https://wallpapercave.com/wp/wp13583943.jpg"
     },
     {
       "id": "63",
@@ -389,7 +211,7 @@
       "type": "suv",
       "hp": "450",
       "price": "10000000",
-      "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/1/versions/mercedes-benz-g-class-amg-g-63-grand-edition1695818429621.jpg?q=80"
+      "image": "https://images.unsplash.com/photo-1648413653819-7c0fd93e8e6a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZzYzfGVufDB8fDB8fHww"
     },
     {
       "id": "c3344a9f-6ce2-43fe-a794-2d3a613a44fb",
@@ -398,7 +220,7 @@
       "type": "racespec",
       "hp": "550",
       "price": "1000000",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkbS_LSjbUB2ZKlzD2rc6LR9II40B2OsVg2qrKHzjXVUJPf-uC&s"
+      "image": "https://www.bmwindia.com/sites/default/files/2024-11/BMW_M340I_RUNNING_SHOT_KV_03_0.jpg"
     },
     {
       "id": "f485552b-4cdb-4bb9-a068-e62b8c342c4a",
@@ -407,7 +229,151 @@
       "type": "racespec",
       "hp": "600",
       "price": "1800000",
-      "image": "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ym13JTIwbTR8ZW58MHx8MHx8fDA%3D"
+      "image": "https://www.bmw-m.com/content/dam/bmw/marketBMW_M/www_bmw-m_com/topics/m-wallpaper/bmw-m4-cs-sd-01.jpg?imwidth=1440"
+    },
+    {
+      "id": "27940498-78f9-4fe9-846d-4ddee167e25e",
+      "name": "jeep-wrangler",
+      "brand": "jeep",
+      "type": "allterains",
+      "hp": "500",
+      "price": "23112",
+      "image": "https://www.simivalleychryslerdodgejeepram.com/blogs/5737/wp-content/uploads/2025/01/white-jeep-wrangler-1-1024x683.webp"
+    },
+    {
+      "id": "23a3df5d-3134-414b-be29-c6cdc9511b3b",
+      "name": " Range Rover Sport SV ",
+      "brand": " Range Rover ",
+      "type": "allterains",
+      "hp": "556",
+      "price": "11133",
+      "image": "https://www.topgear.com/sites/default/files/2024/08/RRS_SV_Edition_Two_25MY_01_DX_Nebula_Blue_070824.jpg?w=1784&h=1004"
+    },
+    {
+      "id": "29f6c232-a0ea-43fc-88f6-e59a95da877d",
+      "name": "Volvo XC90 ",
+      "brand": "Volvo ",
+      "type": "allterains",
+      "hp": "444",
+      "price": "32423",
+      "image": "https://www.topgear.com/sites/default/files/2025/08/5-Volvo-XC90-review-2025-UK.jpg?w=976&h=549"
+    },
+    {
+      "id": "5e5120d1-d1bd-4869-90e2-77760a4b09d4",
+      "name": "BMW X5",
+      "brand": "BMW",
+      "type": "allterains",
+      "hp": "232",
+      "price": "123332",
+      "image": "https://www.topgear.com/sites/default/files/2024/05/P90489775_highRes_the-new-bmw-x5-xdriv.jpg?w=976&h=549"
+    },
+    {
+      "id": "cc682597-9528-4320-920c-4fed0c7ce371",
+      "name": "Mercedes-Benz GLE",
+      "brand": "Mercedes",
+      "type": "allterains",
+      "hp": "344",
+      "price": "89305",
+      "image": "https://www.topgear.com/sites/default/files/2025/03/Medium-48700-mercedes-gle-53-0022.jpg?w=976&h=549"
+    },
+    {
+      "id": "9cdc96a5-3a46-455a-94c2-7bbee4ee7fee",
+      "name": "Audi Q7",
+      "brand": "Audi",
+      "type": "allterains",
+      "hp": "555",
+      "price": "110550",
+      "image": "https://www.topgear.com/sites/default/files/2024/09/35976-AUDIQ72024DEANSMITH02.jpg?w=976&h=549"
+    },
+    {
+      "id": "e2694e0d-bf0a-4de6-a309-3621255da9cf",
+      "name": "Land Rover Defender 110",
+      "brand": "Land Rover ",
+      "type": "allterains",
+      "hp": "444",
+      "price": "11111",
+      "image": "https://www.topgear.com/sites/default/files/cars-car/carousel/2020/03/lead_2.jpg?w=976&h=549"
+    },
+    {
+      "id": "d67a7d4e-f373-4b18-9cd6-334481331d40",
+      "name": "Toyota Land Cruiser",
+      "brand": "Toyota ",
+      "type": "allterains",
+      "hp": "455",
+      "price": "32234",
+      "image": "https://www.topgear.com/sites/default/files/2025/01/1-Land-Cruiser-review-2025-UK.jpg?w=976&h=549"
+    },
+    {
+      "id": "971ccf45-c35b-415d-8dc9-68a57caff317",
+      "name": "Alfa Romeo Giulia",
+      "brand": "Alfa Romeo",
+      "type": "sports",
+      "hp": "344",
+      "price": "9999092",
+      "image": "https://www.topgear.com/sites/default/files/2024/03/GiuliaQ_MY24-13.jpg?w=976&h=549"
+    },
+    {
+      "id": "22662c30-d901-4fa8-8da1-f2387f302a4c",
+      "name": "Mercedes-Benz AMG C63",
+      "brand": "Mercedes",
+      "type": "luxury",
+      "hp": "556",
+      "price": "102805",
+      "image": "https://www.topgear.com/sites/default/files/2024/07/1-Mercedes-C63-review-2024-UK.jpg?w=976&h=549"
+    },
+    {
+      "id": "76d61629-5cee-433f-9ae7-b9ce7af5dccd",
+      "name": "Audi RS4 Avant",
+      "brand": "Audi RS4 Avant",
+      "type": "luxury",
+      "hp": "455",
+      "price": "10000000",
+      "image": "https://www.topgear.com/sites/default/files/2023/10/1%20Audi%20RS4%20Avant%20Competition.jpg?w=976&h=549"
+    },
+    {
+      "id": "cdf786fd-a6c4-400f-8fb8-4bf374a85833",
+      "name": "BMW M3 Touring ",
+      "brand": "BMW",
+      "type": "luxury",
+      "hp": "454",
+      "price": "333322",
+      "image": "https://www.topgear.com/sites/default/files/2023/02/4-BMW-M3-Touring.jpg?w=976&h=549"
+    },
+    {
+      "id": "0ce5e2b3-6d4a-462c-aa7b-58c9f66c55ed",
+      "name": "Porsche Taycan Sport Turismo",
+      "brand": "Porsche",
+      "type": "luxury",
+      "hp": "556",
+      "price": "163570",
+      "image": "https://www.topgear.com/sites/default/files/2025/06/PCGB25_0869_fine.jpg?w=976&h=549"
+    },
+    {
+      "id": "019ff99a-eef9-4bd4-a064-3828d338264c",
+      "name": "BMW M5 Touring",
+      "brand": "BMW",
+      "type": "racespec",
+      "hp": "554",
+      "price": "132250",
+      "image": "https://www.topgear.com/sites/default/files/2024/11/5-BMW-M5-Touring-review-2024.jpg?w=976&h=549"
+    },
+    {
+      "id": "582315b1-aad8-473f-98ec-f273695acf79",
+      "name": "Audi RS6",
+      "brand": "Audi ",
+      "type": "racespec",
+      "hp": "1000",
+      "price": "113010",
+      "image": "https://www.topgear.com/sites/default/files/2023/06/AudiRS6Avant%20performance_Dewsilver_matt069.jpg?w=976&h=549"
+    },
+    {
+      "id": "4a28763e-7eef-4117-b319-e8771b9af1e8",
+      "name": "Mercedes-Benz E63",
+      "brand": "Mercedes",
+      "type": "luxury",
+      "hp": "655",
+      "price": "100000",
+      "image": "https://www.topgear.com/sites/default/files/cars-car/carousel/2020/09/20c0543_005.jpg?w=976&h=549"
     }
   ],
   "orders": [
@@ -490,7 +456,7 @@
       "totalQuantity": 2,
       "totalPrice": 4200000,
       "orderDate": "2025-08-21T13:34:54.953Z",
-      "status": "shipped",
+      "status": "delivered",
       "userId": "7fbc"
     },
     {
@@ -531,7 +497,7 @@
       "totalQuantity": 2,
       "totalPrice": 2028000,
       "orderDate": "2025-08-21T13:38:06.524Z",
-      "status": "delivered",
+      "status": "shipped",
       "userId": "7fbc"
     },
     {
@@ -1156,6 +1122,95 @@
       "orderDate": "2025-08-29T06:06:34.755Z",
       "status": "cancelled",
       "userId": "9223"
+    },
+    {
+      "id": "9897",
+      "customer": {
+        "name": "Abin",
+        "email": "abinjils@gmail.com",
+        "address": "kjhgfdsasdfghkl;'",
+        "city": "rewertyuiop",
+        "state": "lkjhgfghj",
+        "pincode": "234423",
+        "paymentMethod": "credit-card"
+      },
+      "items": [
+        {
+          "id": "67",
+          "name": "Porsche Panamera",
+          "type": "Daily Drives",
+          "price": 15000000,
+          "hp": 325,
+          "image": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Porsche/Panamera/11350/1701081788330/front-left-side-47.jpg?tr=w-664",
+          "brand": "BMW",
+          "quantity": 1,
+          "cartItemId": "3575"
+        }
+      ],
+      "totalQuantity": 1,
+      "totalPrice": 15000000,
+      "orderDate": "2025-08-31T10:43:06.594Z",
+      "status": "pending",
+      "userId": "7fbc"
+    },
+    {
+      "id": "3177",
+      "customer": {
+        "name": "     ",
+        "email": "abinjils@gmail.com",
+        "address": "sdafghjkjhgfds",
+        "city": "CALICUT",
+        "state": "KERALA",
+        "pincode": "222222",
+        "paymentMethod": "debit-card"
+      },
+      "items": [
+        {
+          "id": "61",
+          "name": "BMW i4m",
+          "type": "Daily Drives",
+          "price": 8000000,
+          "hp": 335,
+          "image": "https://images.unsplash.com/photo-1727994832515-7888b6edd884?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aTR8ZW58MHx8MHx8fDA%3D",
+          "brand": "BMW",
+          "quantity": 1,
+          "cartItemId": "a8dd"
+        }
+      ],
+      "totalQuantity": 1,
+      "totalPrice": 8000000,
+      "orderDate": "2025-08-31T11:21:36.958Z",
+      "status": "pending",
+      "userId": "7fbc"
+    },
+    {
+      "id": "d0b4",
+      "customer": {
+        "name": "Abin",
+        "email": "abinjils@gmail.com",
+        "address": "dafsdgfhgjkljj",
+        "city": "sadfg",
+        "state": "sdfg",
+        "pincode": "123456",
+        "paymentMethod": "cash-on-delivery"
+      },
+      "items": [
+        {
+          "id": "62",
+          "name": "BMW M2",
+          "type": "Daily Drives",
+          "price": 9800000,
+          "hp": 453,
+          "image": "https://wallpapercave.com/wp/wp13583943.jpg",
+          "quantity": 1,
+          "cartItemId": "49b4"
+        }
+      ],
+      "totalQuantity": 1,
+      "totalPrice": 9800000,
+      "orderDate": "2025-08-31T11:27:50.626Z",
+      "status": "pending",
+      "userId": "7fbc"
     }
   ],
   "cart": [
@@ -1320,19 +1375,15 @@
       "userId": "7fbc",
       "productId": "7",
       "quantity": 1
+    },
+    {
+      "id": "5035",
+      "userId": null,
+      "productId": "7",
+      "quantity": 1
     }
   ],
   "wishlist": [
-    {
-      "id": "1bd0",
-      "userId": "7fbc",
-      "productId": "63",
-      "name": "Mercedes GLS 450",
-      "type": "Daily Drives",
-      "price": 13000000,
-      "hp": 362,
-      "image": "https://nafta.starconnect-ce.i.mercedes-benz.com/iris/iris.jpg?COSY-EU-100-1713d0VXqaSFqtyO67PobzIr3eWsrrCsdRRzwQZQ9vZbMw3SGtGyjtsd2vGcUfp86XGEuiEJ0l34xOB2NQcbApjkbI5uVmMQC3qE3kzNRJ9m7jA6ohKV5Kh%25vqCr%25yLRzYXYaxPXWrH1eJtn8ws8noiZUidM4FGSMTg90h26PDBSbSeWAtRtsd6J3cUfKLcXGEvaVJ0lgYxOB2PBqbApekRI5usmZQC3UXOkzNGJNm7j0OvhKVB%25t%25vqA89yLR5i2YaxVXSrH1qJ%25n8wRQSoiZeIQM6oY2ulnKkzNU%25Km7jseFhKVzKE%25vq7uqyLRacXYaxHahrH18B%25n8wioyoiCpBxySfD2MpC75U3pZbMFwRPPW3SN9hFNTmj32v2bwbU15zsRG1gdPL4LzC3aB5Nt&fb=1&POV=BE040,PZM&width=768&height=320&BKGND=9&IMGT=P27"
-    },
     {
       "id": "1ff1",
       "userId": "9223",
@@ -1342,6 +1393,26 @@
       "price": 2280000,
       "hp": 1000,
       "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": "91f4",
+      "userId": "7fbc",
+      "productId": "16",
+      "name": "Mercedes G63 AMG",
+      "type": "allterrain",
+      "price": 360000,
+      "hp": 577,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkHfqLPsCEO5IWXo8H8jX42jbdJxzQ_IOpkhnZJWSktJM4hND8J1pDapI&s"
+    },
+    {
+      "id": "de19",
+      "userId": "7fbc",
+      "productId": "62",
+      "name": "BMW M2",
+      "type": "Daily Drives",
+      "price": 9800000,
+      "hp": 453,
+      "image": "https://wallpapercave.com/wp/wp13583943.jpg"
     }
   ]
 }

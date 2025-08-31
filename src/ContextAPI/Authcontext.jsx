@@ -41,7 +41,6 @@ export const AuthProvider = ({ children }) => {
           toast.error("Your account is inactive. Contact admin.");
           return null; 
         }
-
         setUser(loggedInUser);
         localStorage.setItem("user", JSON.stringify(loggedInUser));
         toast.success("Logged in successfully!");

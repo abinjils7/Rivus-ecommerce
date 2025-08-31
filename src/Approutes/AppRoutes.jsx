@@ -29,7 +29,7 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="/" element={<ProtectedRoute adminOnly={false}><Home1/></ProtectedRoute>} />
+      <Route path="/" element={<ProtectedRoute userOnly={true}><Home1/></ProtectedRoute>}/>
 
       {user === null && (
         <>
@@ -38,20 +38,22 @@ function AppRoutes() {
         </>
       )}
 
-      <Route path="/marketplace" element={<Suspense fallback={<LoadingSpinner />}><Productlist /></Suspense>} />
+      <Route path="/marketplace" element={<Suspense fallback={<LoadingSpinner />}><ProtectedRoute userOnly={true}><Productlist /></ProtectedRoute></Suspense>} />
       <Route path="/cars" element={<Suspense fallback={<LoadingSpinner />}><Productlist /></Suspense>} />
       <Route path="/Allterains" element={<Allterrains />} />
       <Route path="/colections" element={<LexuryLines />} />
       <Route path="/trackspec" element={<Tracs />} />
       <Route path="/premium-luxury" element={<Luxs />} />
-      <Route path="/testdrive" element={<TestDrive />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/orderpage" element={<Orderpage />} />
-      <Route path="/ordhistory" element={<MyOrders />} />
-      <Route path="/wishlist" element={<WishlistPage />} />
+      <Route path="/testdrive" element={<ProtectedRoute userOnly={true}><TestDrive /></ProtectedRoute>} />
+      <Route path="/about" element={<ProtectedRoute userOnly={true}><About /></ProtectedRoute>} />
+      <Route path="/cart" element={<ProtectedRoute userOnly={true}><Cart /></ProtectedRoute>} />
+      <Route path="/orderpage" element={<ProtectedRoute userOnly={true}><Orderpage /></ProtectedRoute>} />
+      <Route path="/ordhistory" element={<ProtectedRoute userOnly={true}><MyOrders /></ProtectedRoute>} />
+      <Route path="/wishlist" element={<ProtectedRoute userOnly={true}><WishlistPage /></ProtectedRoute>} />
 
-      ------------------------ADMIN-----------------------------------------------------------------------
+
+
+                    ------------------------ADMIN---------------------------
 
 
       

@@ -95,7 +95,8 @@ export const CartProvider = ({ children }) => {
       setCart([]);
       toast.success("Cart cleared");
     } catch (err) {
-      console.error("Failed to clear cart:", err);
+      console.log(err);
+      
       toast.error("Could not clear cart");
     }
   };
@@ -104,8 +105,7 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, totalQuantity, addToCart, removeFromCart, updateQuantity, clearCart }}
-    >
+      value={{ cart, totalQuantity, addToCart, removeFromCart, updateQuantity, clearCart }}>
       {children}
     </CartContext.Provider>
   );

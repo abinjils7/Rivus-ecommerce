@@ -33,12 +33,17 @@ export default function ProductControlers({ children }) {
       console.log(err);
     }
   }
-
   return (
     <ProductContext.Provider
-      value={{ deleteProductDB, addCarsDB, editProductDB }}
-    >
+      value={{ deleteProductDB, addCarsDB, editProductDB }}>
       {children}
     </ProductContext.Provider>
   );
 }
+
+
+{/* <ProductControlers>
+  <component>
+</ProductControlers> */}
+
+

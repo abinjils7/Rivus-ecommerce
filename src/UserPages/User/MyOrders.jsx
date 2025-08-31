@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { orderApi } from "../../Api";
 import { WishlistContext } from "../../ContextAPI/WishlistContext";
 import axios from "axios";
+import { toast } from "sonner";
 
 function MyOrders() {
   const { user } = useAuth();
@@ -13,14 +14,13 @@ function MyOrders() {
   const { cancelOrder } = useContext(WishlistContext);
 
   useEffect(() => {
-    if (!user) return;
-
+    if (!user) return; 
     axios
       .get(`${orderApi}?userId=${user.id}`)
       .then((res) => setOrders(res.data))
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
-  }, );
+  });
 
   const filteredOrders =
     filterStatus === "all"
@@ -36,7 +36,6 @@ function MyOrders() {
         return "bg-yellow-500 text-white";
       case "delivered":
         return "bg-green-600 text-white";
-      case "cancelled":
       case "canceled":
         return "bg-red-500 text-white";
       default:
@@ -124,7 +123,6 @@ function MyOrders() {
             </button>
           </div>
 
-          {/* Orders List */}
           <div className="space-y-6">
             {filteredOrders.map((order) => (
               <div
@@ -156,7 +154,6 @@ function MyOrders() {
                   </div>
                 </div>
 
-                {/* Items */}
                 <div className="p-4">
                   {order.items.map((item) => (
                     <div

@@ -25,9 +25,6 @@ export default function OrderController({ children }) {
       console.error("Failed to load orders:", error);
     }
   }
-
-  
-
   return (
     <OrderContext.Provider value={{ setOrderStatus, orders, fetchOrders }}>
       {children}

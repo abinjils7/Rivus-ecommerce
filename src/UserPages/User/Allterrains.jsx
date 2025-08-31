@@ -13,7 +13,7 @@ function Allterrains() {
       const response = await fetch(`${carApi}`);
       const data = await response.json();
       // Filter cars to only include those with type 'allterrain'
-      const allTerrainCars = data.filter(car => car.type === 'allterrain');
+      const allTerrainCars = data.filter(car => car.type === 'allterains');
       setCars(allTerrainCars);
     } catch (error) {
       console.error('Error fetching cars:', error);

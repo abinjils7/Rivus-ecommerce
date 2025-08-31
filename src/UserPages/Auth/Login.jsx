@@ -64,7 +64,7 @@ function Login() {
           </p>
 
           <form onSubmit={formik.handleSubmit} className="mt-6 space-y-5">
-            {/* Email */}
+            
             <div>
               <input
                 id="email"
@@ -86,7 +86,7 @@ function Login() {
               )}
             </div>
 
-            {/* Password */}
+            
             <div className="relative">
               <input
                 id="password"
